@@ -1,0 +1,2977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NFET 2026 — Register Now | GCC School</title>
+  <meta name="description"
+    content="B.Com graduates are getting ₹10 LPA job offers before training starts. Register for NFET 2026.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="shortcut icon" href="https://storage.googleapis.com/static_files_backend/media/images/image.png" type="image/x-icon">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap"
+    rel="stylesheet">
+  <script src="https://sdk.cashfree.com/js/v3/cashfree.js"></script>
+  <style>
+    /* ─── Brand Tokens ───────────────────────────────────── */
+    :root {
+      --dp: #3B0D50;
+      /* dark purple  */
+      --mp: #7A2899;
+      /* mid purple   */
+      --bp: #5B32CC;
+      /* bright purple*/
+      --pp: #F3EAF9;
+      /* pale purple  */
+      --pb: #D4B8E3;
+      /* purple border*/
+      --or: #CC7A05;
+      /* orange CTA   */
+      --ord: #A86204;
+      --orl: #F5A623;
+      --orp: #FEF4E0;
+      --gd: #B89428;
+
+      --wh: #FFFFFF;
+      --off: #F9F7FC;
+      --bdr: #E8E0F0;
+      --t1: #1A0626;
+      --t2: #4A3360;
+      --t3: #8B79A0;
+      --gn: #1A7A4A;
+      --gnp: #E8F7EE;
+      --rd: #C0392B;
+
+      --f: 'Poppins', sans-serif;
+
+      --sh-a: 0 1px 4px rgba(59, 13, 80, .06);
+      --sh-b: 0 4px 24px rgba(59, 13, 80, .09);
+      --sh-c: 0 8px 48px rgba(59, 13, 80, .13);
+      --sh-o: 0 6px 30px rgba(204, 122, 5, .36);
+      --sh-p: 0 6px 30px rgba(59, 13, 80, .18);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--wh);
+      color: var(--t1);
+      font-family: var(--f);
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font-family: var(--f);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ─── Utilities ──────────────────────────────────────── */
+    .w {
+      width: 100%;
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .w-narrow {
+      max-width: 800px;
+    }
+
+    @keyframes fup {
+      from {
+        opacity: 0;
+        transform: translateY(20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    @keyframes fin {
+      from {
+        opacity: 0
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: .3
+      }
+    }
+
+    @keyframes barUp {
+      from {
+        transform: translateY(100%);
+        opacity: 0
+      }
+
+      to {
+        transform: none;
+        opacity: 1
+      }
+    }
+
+    .a1 {
+      animation: fup .65s .05s both
+    }
+
+    .a2 {
+      animation: fup .65s .15s both
+    }
+
+    .a3 {
+      animation: fup .65s .25s both
+    }
+
+    .a4 {
+      animation: fup .65s .35s both
+    }
+
+    .a5 {
+      animation: fup .65s .45s both
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s ease
+    }
+
+    .reveal.in {
+      opacity: 1;
+      transform: none
+    }
+
+    .d1 {
+      transition-delay: .06s
+    }
+
+    .d2 {
+      transition-delay: .12s
+    }
+
+    .d3 {
+      transition-delay: .18s
+    }
+
+    .d4 {
+      transition-delay: .24s
+    }
+
+    /* ─── NAV ────────────────────────────────────────────── */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 300;
+      height: 62px;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      background: rgba(59, 13, 80, .97);
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+      backdrop-filter: blur(10px);
+      transition: box-shadow .3s;
+    }
+
+    .nav.scrolled {
+      box-shadow: 0 4px 24px rgba(59, 13, 80, .3);
+    }
+
+    .nav-in {
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mk {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      background: var(--or);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .6rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: .04em;
+      flex-shrink: 0;
+    }
+
+    .logo-tx {
+      font-size: .82rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+    .logo img {
+      width: 160px;
+      height: auto;
+     }
+
+    .logo-tx small {
+      display: block;
+      font-size: .6rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .55);
+    }
+
+    .nav-cta {
+      background: var(--or);
+      color: #fff;
+      font-size: .76rem;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .2s;
+      white-space: nowrap;
+      box-shadow: var(--sh-o);
+    }
+
+    .nav-cta:hover {
+      background: var(--orl);
+      transform: translateY(-1px);
+    }
+  
+
+    @media(max-width:440px) {
+      .logo-tx {
+        display: none
+      }
+
+      .nav-cta {
+        padding: 8px 14px;
+        font-size: .7rem
+      }
+    }
+
+    /* ─── STICKY BAR ─────────────────────────────────────── */
+    .sbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 299;
+      background: var(--dp);
+      border-top: 2px solid var(--or);
+      padding: 11px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: barUp .6s 1.4s both;
+    }
+
+    .sbar-t {
+      font-size: .8rem;
+      color: rgba(255, 255, 255, .65);
+      white-space: nowrap;
+    }
+
+    .sbar-t strong {
+      color: var(--orl);
+    }
+
+    .sbar-btn {
+      background: var(--or);
+      color: #fff;
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 10px 28px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      box-shadow: var(--sh-o);
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    .sbar-btn:hover {
+      background: var(--orl);
+      transform: translateY(-1px);
+    }
+
+    @media(max-width:480px) {
+      .sbar {
+        flex-direction: column;
+        gap: 8px;
+        padding: 11px 20px;
+      }
+
+      .sbar-t {
+        font-size: .75rem;
+        text-align: center;
+      }
+
+      .sbar-btn {
+        width: 100%;
+        text-align: center;
+        padding: 13px;
+      }
+    }
+
+    /* ═══════════════════════════════════════════════════════
+   HERO — full-screen, split desktop layout
+   Mobile: stacked. Desktop: headline left, form right
+═══════════════════════════════════════════════════════ */
+    .hero {
+      min-height: 100svh;
+      background: linear-gradient(155deg, #1C0132 0%, var(--dp) 45%, #5B1280 80%, #1C0870 100%);
+      position: relative;
+      overflow: visible;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+      padding-top: 62px;
+      /* nav height */
+      z-index: 5;
+    }
+
+    /* dot grid overlay */
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background-image: radial-gradient(rgba(255, 255, 255, .06) 1px, transparent 1px);
+      background-size: 26px 26px;
+    }
+
+    /* orange glow top-right */
+    .hero-glow-a {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 54vw;
+      height: 54vw;
+      max-width: 520px;
+      max-height: 520px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204, 122, 5, .20) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* purple glow bottom-left */
+    .hero-glow-b {
+      position: absolute;
+      bottom: 60px;
+      left: -60px;
+      width: 40vw;
+      height: 40vw;
+      max-width: 380px;
+      max-height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91, 50, 204, .22) 0%, transparent 68%);
+      pointer-events: none;
+    }
+
+    /* TOP accent bar */
+    .hero-topbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--bp), var(--or), var(--gd), var(--bp));
+    }
+
+    /* Split layout container */
+    .hero-split {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0;
+      padding: 48px 20px 0;
+      max-width: 1080px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    @media(min-width:900px) {
+      .hero-split {
+        flex-direction: row;
+        align-items: center;
+        gap: 56px;
+        padding: 60px 20px 0;
+      }
+    }
+
+    /* LEFT — headline */
+    .hero-left {
+      flex: 1.1;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, .08);
+      border: 1px solid rgba(255, 255, 255, .18);
+      padding: 7px 18px;
+      border-radius: 100px;
+      font-size: .67rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .82);
+      margin-bottom: 28px;
+    }
+
+    .eyebrow-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--orl);
+      animation: pulse 1.8s infinite;
+      flex-shrink: 0;
+    }
+
+    /* THE headline */
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 800;
+      line-height: 1.08;
+      letter-spacing: -.02em;
+      color: #fff;
+      margin-bottom: 0;
+    }
+
+    .h-kicker {
+      display: block;
+      font-size: clamp(.95rem, 2vw, 1.15rem);
+      font-weight: 500;
+      color: rgba(255, 255, 255, .55);
+      letter-spacing: .01em;
+      margin-bottom: 10px;
+      font-style: normal;
+    }
+
+    .h-orange {
+      color: var(--orl);
+    }
+
+    .h-underline {
+      position: relative;
+      display: inline;
+    }
+
+    .h-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--or), var(--gd));
+      border-radius: 4px;
+      opacity: .7;
+    }
+
+    .hero-rule {
+      width: 52px;
+      height: 4px;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--or), var(--gd));
+      margin: 22px 0;
+    }
+
+    .hero-sub {
+      font-size: clamp(.9rem, 1.9vw, 1rem);
+      font-weight: 400;
+      color: rgba(255, 255, 255, .62);
+      line-height: 1.75;
+      max-width: 500px;
+      margin-bottom: 32px;
+    }
+
+    /* mobile-only CTA */
+    .hero-cta-mobile {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+
+    @media(min-width:900px) {
+      .hero-cta-mobile {
+        display: none;
+      }
+    }
+
+    .btn-hero {
+      background: var(--or);
+      color: #fff;
+      font-size: .97rem;
+      font-weight: 700;
+      padding: 15px 32px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .btn-hero:hover {
+      background: var(--orl);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 44px rgba(204, 122, 5, .5);
+    }
+
+    .hero-price-note {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 1.4;
+    }
+
+    .hero-price-note strong {
+      color: rgba(255, 255, 255, .9);
+      font-size: 1.05rem;
+      display: block;
+    }
+
+    .hero-price-note sup {
+      font-size: .6em;
+      font-weight: 400;
+    }
+
+    /* RIGHT — lead form */
+    .hero-right {
+      flex: 0 0 380px;
+      position: relative;
+      z-index: 10;
+      padding-bottom: 40px;
+    }
+
+    @media(max-width:899px) {
+      .hero-right {
+        width: 100%;
+        max-width: 480px;
+      }
+    }
+
+    .lead-form {
+      background: rgba(255, 255, 255, .97);
+      border-radius: 20px;
+      padding: 32px 28px 28px;
+      box-shadow: 0 20px 80px rgba(0, 0, 0, .3), 0 0 0 1px rgba(255, 255, 255, .1);
+      position: relative;
+    }
+
+    /* orange top accent */
+    .lead-form::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dp), var(--or));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .lf-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dp);
+      margin-bottom: 4px;
+      line-height: 1.2;
+    }
+
+    .lf-sub {
+      font-size: .78rem;
+      color: var(--t3);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .lf-field {
+      margin-bottom: 14px;
+    }
+
+    .lf-label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--t2);
+      margin-bottom: 5px;
+      letter-spacing: .02em;
+    }
+
+    .lf-input {
+      width: 100%;
+      background: var(--off);
+      border: 1.5px solid var(--bdr);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: .88rem;
+      color: var(--t1);
+      font-family: var(--f);
+      transition: border-color .2s, box-shadow .2s;
+      outline: none;
+    }
+
+    .lf-input:focus {
+      border-color: var(--mp);
+      box-shadow: 0 0 0 3px rgba(122, 40, 153, .1);
+    }
+
+    .lf-input.invalid {
+      border-color: var(--rd);
+      background: rgba(192, 57, 43, 0.03);
+    }
+
+    .lf-input::placeholder {
+      color: var(--t3);
+    }
+
+    .field-error {
+      color: var(--rd);
+      font-size: 0.68rem;
+      margin-top: 4px;
+      display: none;
+      font-weight: 500;
+    }
+
+    .lf-select {
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238B79A0' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 14px center;
+      padding-right: 36px;
+    }
+
+    /* Custom Searchable Select */
+    .custom-select-container {
+      position: relative;
+      z-index: 10;
+    }
+
+    .custom-select-options {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      border: 1.5px solid var(--bdr);
+      border-radius: 0 0 10px 10px;
+      max-height: 280px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 9999;
+      display: none;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+      margin-top: 1px;
+    }
+
+    .custom-select-options.active {
+      display: block;
+    }
+
+    .cs-opt {
+      padding: 12px 14px;
+      font-size: .85rem;
+      color: var(--t2);
+      cursor: pointer;
+      transition: all .2s;
+      white-space: normal;
+      line-height: 1.4;
+      border-bottom: 1px solid var(--off);
+    }
+
+    .cs-opt:last-child {
+      border-bottom: none;
+    }
+
+    .cs-opt:hover {
+      background: var(--off);
+      color: var(--mp);
+      padding-left: 18px;
+    }
+
+    .cs-opt.no-res {
+      cursor: default;
+      color: var(--t3);
+      font-style: italic;
+    }
+
+    .lf-btn {
+      width: 100%;
+      background: var(--or);
+      color: #fff;
+      font-size: .97rem;
+      font-weight: 700;
+      padding: 15px 20px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .lf-btn:hover {
+      background: var(--ord);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(204, 122, 5, .48);
+    }
+
+    .lf-secure {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 12px;
+      font-size: .68rem;
+      color: var(--t3);
+    }
+
+    .lf-price {
+      text-align: center;
+      font-size: .72rem;
+      color: var(--t3);
+      margin-top: 8px;
+    }
+
+    .lf-price strong {
+      color: var(--t1);
+      font-size: .88rem;
+    }
+
+    .lf-price sup {
+      font-size: .6em;
+    }
+
+    /* ─── HERO STAT STRIP ────────────────────────────────── */
+    .hero-stats {
+      background: rgba(0, 0, 0, .3);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      backdrop-filter: blur(12px);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-stats-in {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(min-width:540px) {
+      .hero-stats-in {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .hst {
+      padding: 18px 20px;
+      border-right: 1px solid rgba(255, 255, 255, .07);
+    }
+
+    .hst:last-child {
+      border-right: none;
+    }
+
+    .hst-v {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--orl);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .hst-l {
+      font-size: .63rem;
+      color: rgba(255, 255, 255, .42);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      line-height: 1.4;
+    }
+
+    /* ─── COUNTDOWN ──────────────────────────────────────── */
+    .cd {
+      background: var(--or);
+      padding: 18px 20px;
+    }
+
+    .cd-in {
+      max-width: 1080px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .cd-lbl {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .72);
+    }
+
+    .cd-lbl strong {
+      display: block;
+      font-size: .96rem;
+      color: #fff;
+      margin-top: 2px;
+      font-weight: 700;
+    }
+
+    .cd-timer {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tu {
+      text-align: center;
+      min-width: 50px;
+    }
+
+    .tn {
+      display: block;
+      font-size: 1.85rem;
+      font-weight: 800;
+      color: #fff;
+      background: rgba(0, 0, 0, .15);
+      border-radius: 8px;
+      padding: 6px 8px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: .02em;
+    }
+
+    .tl {
+      font-size: .52rem;
+      color: rgba(255, 255, 255, .6);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-top: 3px;
+    }
+
+    .tsep {
+      font-size: 1.5rem;
+      color: rgba(255, 255, 255, .35);
+      margin-top: -12px;
+      font-weight: 300;
+    }
+
+    .cd-btn {
+      background: rgba(0, 0, 0, .2);
+      color: #fff;
+      border: 1.5px solid rgba(255, 255, 255, .45);
+      font-size: .82rem;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .2s;
+    }
+
+    .cd-btn:hover {
+      background: rgba(0, 0, 0, .35);
+    }
+
+    @media(max-width:580px) {
+      .cd-in {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .cd-lbl {
+        width: 100%;
+      }
+
+      .cd-btn {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+      }
+
+      .tn {
+        font-size: 1.5rem;
+        padding: 5px 6px;
+      }
+    }
+
+    /* ─── SECTIONS ───────────────────────────────────────── */
+    .sec {
+      padding: 72px 0;
+      background: var(--wh);
+    }
+
+    .sec-alt {
+      background: var(--off);
+    }
+
+    .sec-dp {
+      background: linear-gradient(155deg, var(--dp), #230840);
+    }
+
+    .sec-lbl {
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mp);
+      margin-bottom: 10px;
+    }
+
+    .sec-lbl-l {
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .sec-h {
+      font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+      font-weight: 800;
+      line-height: 1.18;
+      color: var(--dp);
+      margin-bottom: 12px;
+      letter-spacing: -.01em;
+    }
+
+    .sec-h-l {
+      color: #fff;
+    }
+
+    .sec-p {
+      font-size: .94rem;
+      color: var(--t2);
+      line-height: 1.72;
+      max-width: 500px;
+    }
+
+    .sec-p-l {
+      color: rgba(255, 255, 255, .58);
+    }
+
+    .mt3 {
+      margin-top: 36px;
+    }
+
+    .mt4 {
+      margin-top: 48px;
+    }
+
+    /* ─── REGISTRATION CARD ──────────────────────────────── */
+    .reg-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media(min-width:760px) {
+      .reg-grid {
+        grid-template-columns: 1.1fr .9fr;
+      }
+    }
+
+    .reg-card {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 22px;
+      overflow: hidden;
+      box-shadow: var(--sh-b);
+    }
+
+    .reg-top {
+      background: linear-gradient(135deg, var(--dp) 0%, #6B1B90 100%);
+      padding: 26px 26px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reg-top::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .06);
+    }
+
+    .reg-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      color: rgba(255, 255, 255, .9);
+      font-size: .62rem;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 14px;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 3px;
+    }
+
+    .p-cur {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--orl);
+    }
+
+    .p-amt {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: #fff;
+      line-height: 1;
+    }
+
+    .p-tax {
+      font-size: .68rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, .45);
+      margin-left: 4px;
+      align-self: flex-end;
+      margin-bottom: 4px;
+    }
+
+    .p-sub {
+      font-size: .73rem;
+      color: rgba(255, 255, 255, .42);
+      margin-top: 4px;
+    }
+
+    .reg-body {
+      padding: 22px 26px 28px;
+    }
+
+    .bonus {
+      background: var(--orp);
+      border: 1.5px solid rgba(204, 122, 5, .25);
+      border-radius: 12px;
+      padding: 13px 15px;
+      margin-bottom: 13px;
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+    }
+
+    .bonus-ico {
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .bonus h5 {
+      font-size: .83rem;
+      font-weight: 700;
+      color: var(--dp);
+      margin-bottom: 2px;
+    }
+
+    .bonus p {
+      font-size: .74rem;
+      color: var(--t2);
+      line-height: 1.5;
+    }
+
+    .fl {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+      margin-bottom: 24px;
+    }
+
+    .fi {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: .86rem;
+      color: var(--t2);
+      line-height: 1.5;
+    }
+
+    .tick {
+      width: 19px;
+      height: 19px;
+      border-radius: 50%;
+      background: var(--gnp);
+      border: 1.5px solid rgba(26, 122, 74, .22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .tick svg {
+      width: 9px;
+      height: 9px;
+      color: var(--gn);
+    }
+
+    .fi strong {
+      color: var(--t1);
+    }
+
+    .btn-pay {
+      width: 100%;
+      background: var(--or);
+      color: #fff;
+      font-size: .97rem;
+      font-weight: 700;
+      padding: 16px 20px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+    }
+
+    .btn-pay:hover {
+      background: var(--ord);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 44px rgba(204, 122, 5, .46);
+    }
+
+    .btn-pay-sub {
+      text-align: center;
+      margin-top: 8px;
+      font-size: .68rem;
+      color: var(--t3);
+    }
+
+    .sec-note {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      margin-top: 10px;
+      font-size: .69rem;
+      color: var(--t3);
+    }
+
+    .info-side {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .ib {
+      background: var(--off);
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .ib-h {
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .11em;
+      text-transform: uppercase;
+      color: var(--mp);
+      margin-bottom: 12px;
+    }
+
+    .ir {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .83rem;
+      padding-bottom: 9px;
+      border-bottom: 1px solid var(--bdr);
+    }
+
+    .ir:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .ik {
+      color: var(--t3);
+      flex-shrink: 0;
+    }
+
+    .iv {
+      color: var(--t1);
+      font-weight: 600;
+      text-align: right;
+    }
+
+    /* ─── JOURNEY ────────────────────────────────────────── */
+    .journey {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .jline {
+      position: absolute;
+      left: 27px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: linear-gradient(180deg, var(--or), rgba(204, 122, 5, .05));
+      display: none;
+    }
+
+    @media(min-width:580px) {
+      .jline {
+        display: block;
+      }
+    }
+
+    .step {
+      display: flex;
+      gap: 18px;
+      padding-bottom: 30px;
+    }
+
+    .sno {
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      border: 2px solid var(--bdr);
+      background: var(--wh);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--t3);
+      flex-shrink: 0;
+      z-index: 1;
+      box-shadow: 0 0 0 4px var(--wh);
+    }
+
+    .step.act .sno {
+      background: var(--dp);
+      border-color: var(--dp);
+      color: #fff;
+    }
+
+    .step.hl .sno {
+      background: var(--or);
+      border-color: var(--or);
+      color: #fff;
+    }
+
+    .sbody {
+      padding-top: 10px;
+    }
+
+    .stag {
+      display: inline-block;
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 7px;
+    }
+
+    .stag-p {
+      background: var(--pp);
+      color: var(--mp);
+    }
+
+    .stag-o {
+      background: var(--orp);
+      color: var(--ord);
+    }
+
+    .sbody h3 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dp);
+      margin-bottom: 4px;
+    }
+
+    .sbody p {
+      font-size: .83rem;
+      color: var(--t2);
+      line-height: 1.65;
+      max-width: 480px;
+    }
+
+    .sfn {
+      font-size: .7rem;
+      color: var(--t3);
+      margin-top: 4px;
+      font-style: italic;
+    }
+
+    /* ─── EXAM DETAILS ───────────────────────────────────── */
+    /* 2×2 bold number grid */
+    .exam-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .en {
+      border-radius: 18px;
+      padding: 26px 22px 22px;
+      position: relative;
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .en-light {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+    }
+
+    .en-dark {
+      background: linear-gradient(135deg, var(--dp), #6B1B90);
+    }
+
+    .en:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--sh-b);
+    }
+
+    .en::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      border-radius: 18px 18px 0 0;
+    }
+
+    .en-light::before {
+      background: linear-gradient(90deg, var(--dp), var(--mp));
+    }
+
+    .en-dark::before {
+      background: linear-gradient(90deg, var(--or), var(--gd));
+    }
+
+    .en-num {
+      font-size: clamp(3rem, 7vw, 4rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .en-light .en-num {
+      color: var(--dp);
+    }
+
+    .en-dark .en-num {
+      color: var(--orl);
+    }
+
+    .en-lbl {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: 8px;
+    }
+
+    .en-light .en-lbl {
+      color: var(--mp);
+    }
+
+    .en-dark .en-lbl {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .en-desc {
+      font-size: .78rem;
+      line-height: 1.45;
+    }
+
+    .en-light .en-desc {
+      color: var(--t2);
+    }
+
+    .en-dark .en-desc {
+      color: rgba(255, 255, 255, .55);
+    }
+
+    /* feature tiles */
+    .exam-feats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    @media(max-width:480px) {
+      .exam-feats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ef {
+      background: var(--dp);
+      border-radius: 16px;
+      padding: 20px 18px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .ef-ico {
+      width: 40px;
+      height: 40px;
+      border-radius: 11px;
+      background: rgba(255, 255, 255, .12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .ef h4 {
+      font-size: .9rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 3px;
+      line-height: 1.3;
+    }
+
+    .ef p {
+      font-size: .75rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.5;
+    }
+
+    /* syllabus */
+    .syl-box {
+      background: var(--off);
+      border: 1.5px solid var(--bdr);
+      border-radius: 18px;
+      padding: 26px 24px;
+    }
+
+    .syl-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 22px;
+    }
+
+    .syl-hdr-t {
+      font-size: .68rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--mp);
+    }
+
+    .syl-hdr-s {
+      font-size: .7rem;
+      color: var(--t3);
+    }
+
+    .si {
+      margin-bottom: 16px;
+    }
+
+    .si:last-child {
+      margin-bottom: 0;
+    }
+
+    .si-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 7px;
+    }
+
+    .si-n {
+      font-size: .84rem;
+      font-weight: 500;
+      color: var(--t1);
+    }
+
+    .si-p {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--dp);
+      min-width: 46px;
+      text-align: right;
+    }
+
+    .si-track {
+      height: 7px;
+      background: var(--bdr);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .si-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--dp), var(--or));
+      transition: width 1.3s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    /* ─── ELIGIBILITY ─────────────────────────────────────── */
+    /* purple hero banner */
+    .elig-hero {
+      background: linear-gradient(135deg, var(--dp), #6B1B90);
+      border-radius: 20px;
+      padding: 32px 28px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .elig-hero::after {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .04);
+    }
+
+    .elig-hero-icon {
+      font-size: 3.2rem;
+      flex-shrink: 0;
+    }
+
+    .elig-hero-text h3 {
+      font-size: clamp(1.2rem, 2.8vw, 1.7rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.2;
+      margin-bottom: 6px;
+      letter-spacing: -.01em;
+    }
+
+    .elig-hero-text p {
+      font-size: .85rem;
+      color: rgba(255, 255, 255, .62);
+      line-height: 1.55;
+    }
+
+    /* checklist cards */
+    .elig-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    @media(min-width:560px) {
+      .elig-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .ec {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 16px;
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      transition: all .22s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ec::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--dp), var(--mp));
+    }
+
+    .ec:hover {
+      border-color: var(--pb);
+      box-shadow: var(--sh-b);
+      transform: translateX(3px);
+    }
+
+    .ec-ico {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--dp), var(--mp));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+
+    .ec-body h4 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dp);
+      margin-bottom: 2px;
+    }
+
+    .ec-body p {
+      font-size: .76rem;
+      color: var(--t3);
+      line-height: 1.4;
+    }
+
+    /* ─── CREDIBILITY ─────────────────────────────────────── */
+    .cred-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media(min-width:640px) {
+      .cred-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .cc {
+      background: rgba(255, 255, 255, .04);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 16px;
+      padding: 22px 18px;
+      transition: all .3s;
+    }
+
+    .cc:hover {
+      background: rgba(255, 255, 255, .08);
+      transform: translateY(-3px);
+    }
+
+    .cc-ico {
+      font-size: 1.7rem;
+      margin-bottom: 10px;
+    }
+
+    .cc h4 {
+      font-size: .88rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .cc p {
+      font-size: .76rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 1.55;
+    }
+
+    /* ─── VOICES ──────────────────────────────────────────── */
+    .vgrid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media(min-width:600px) {
+      .vgrid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .vc {
+      background: var(--wh);
+      border: 1px solid var(--bdr);
+      border-radius: 16px;
+      padding: 26px;
+      position: relative;
+    }
+
+    .vq {
+      font-size: 2.5rem;
+      color: var(--bdr);
+      line-height: 1;
+      position: absolute;
+      top: 14px;
+      right: 18px;
+      font-weight: 900;
+    }
+
+    .vt {
+      font-size: .87rem;
+      color: var(--t2);
+      line-height: 1.75;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+
+    .vn {
+      font-size: .8rem;
+      font-weight: 700;
+      color: var(--dp);
+    }
+
+    .vr {
+      font-size: .71rem;
+      color: var(--t3);
+      margin-top: 2px;
+    }
+
+    /* ─── FAQ ─────────────────────────────────────────────── */
+    .faqs {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+    }
+
+    .fi2 {
+      border: 1px solid var(--bdr);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color .2s;
+    }
+
+    .fi2.open {
+      border-color: var(--pb);
+    }
+
+    .fq {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 18px 20px;
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--dp);
+      text-align: left;
+      background: none;
+      font-family: var(--f);
+      transition: background .2s;
+      cursor: pointer;
+    }
+
+    .fq:hover {
+      background: var(--off);
+    }
+
+    .fic {
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      border: 1.5px solid var(--bdr);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: all .3s;
+    }
+
+    .fi2.open .fic {
+      background: var(--mp);
+      border-color: var(--mp);
+      transform: rotate(180deg);
+    }
+
+    .fi2.open .fic svg {
+      color: #fff;
+    }
+
+    .fa {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s ease;
+    }
+
+    .fi2.open .fa {
+      max-height: 500px;
+    }
+
+    .fab {
+      padding: 0 20px 18px;
+      font-size: .84rem;
+      color: var(--t2);
+      line-height: 1.75;
+      border-top: 1px solid var(--bdr);
+      padding-top: 15px;
+    }
+
+    /* ─── FINAL CTA ───────────────────────────────────────── */
+    .final {
+      padding: 80px 0 160px;
+      background: linear-gradient(155deg, var(--dp), #230840);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .final::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204, 122, 5, .10), transparent 70%);
+      pointer-events: none;
+    }
+
+    .final::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(91, 50, 204, .18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .final h2 {
+      font-size: clamp(1.8rem, 3.8vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.16;
+      margin-bottom: 16px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: -.01em;
+    }
+
+    .final h2 em {
+      font-style: italic;
+      color: var(--orl);
+    }
+
+    .final-sub {
+      font-size: .96rem;
+      color: rgba(255, 255, 255, .56);
+      max-width: 400px;
+      margin: 0 auto 36px;
+      line-height: 1.72;
+    }
+
+    .btn-final {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: var(--or);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 700;
+      padding: 17px 40px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      margin-bottom: 10px;
+    }
+
+    .btn-final:hover {
+      background: var(--orl);
+      transform: translateY(-2px);
+      box-shadow: 0 14px 48px rgba(204, 122, 5, .48);
+    }
+
+    .final-price {
+      font-size: .76rem;
+      color: rgba(255, 255, 255, .35);
+      margin-bottom: 4px;
+    }
+
+    .final-price strong {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .final-note {
+      font-size: .74rem;
+      color: rgba(255, 255, 255, .28);
+    }
+
+    .broch {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .28);
+      margin-top: 20px;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: rgba(255, 255, 255, .12);
+      transition: color .2s;
+    }
+
+    .broch:hover {
+      color: rgba(255, 255, 255, .55);
+    }
+
+    /* ─── FOOTER ──────────────────────────────────────────── */
+    .footer {
+      background: #0E0118;
+      border-top: 1px solid rgba(255, 255, 255, .06);
+      padding: 22px 20px;
+      text-align: center;
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .28);
+    }
+
+    .footer strong {
+      color: rgba(255, 255, 255, .46);
+    }
+
+    .footer a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── NAV ──────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav-in">
+      <div class="logo">
+        <!-- <div class="logo-mk">GCC</div>
+        <div class="logo-tx">GCC School<small>India's 1st Hire-First Institution</small></div> -->
+        <img src="https://storage.googleapis.com/static_files_backend/media/images/GCC-School-Logo-Golden.png" alt="" srcset="">
+      </div>
+      <button class="nav-cta" onclick="goToForm()">Register for NFET</button>
+    </div>
+  </nav>
+
+  <!-- ── STICKY BAR ───────────────────────────────────── -->
+  <div class="sbar">
+    <div class="sbar-t">Job Interviews in Gurugram — <strong>Registration closes May 15</strong></div>
+    <button class="sbar-btn" onclick="goToForm()">Register Now →</button>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+     HERO — impactful split layout
+     Mobile: headline → form stacked
+     Desktop: headline left | lead form right
+══════════════════════════════════════════════════════ -->
+  <section class="hero" id="top">
+    <div class="hero-topbar"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-glow-a"></div>
+    <div class="hero-glow-b"></div>
+
+    <div class="hero-split">
+
+      <!-- LEFT: Headline -->
+      <div class="hero-left">
+
+        <div class="hero-eyebrow a1">
+          <span class="eyebrow-dot"></span>
+          NFET 2026 — Registrations Open
+        </div>
+
+        <h1 class="a2">
+          <span class="h-kicker">India's B.Com graduates — you deserve better.</span>
+          Your first job offer:<br>
+          <span class="h-orange">₹10 LPA.</span><br>
+          <span style="font-size:clamp(1.8rem,4.5vw,3rem);font-weight:700;color:rgba(255,255,255,.85)">Before training
+            even begins.</span>
+        </h1>
+
+        <div class="hero-rule a3"></div>
+
+        <p class="hero-sub a3">
+          GCC School flipped the model for B.Com first-division graduates. Clear NFET — the national entrance test — and
+          walk into job interviews in Gurugram where the world's top consulting firms and global banks make you an
+          employment offer <em style="color:rgba(255,255,255,.8);font-style:normal;font-weight:600">before</em> your
+          12-month training program begins.
+        </p>
+
+        <!-- mobile CTA — hidden on desktop -->
+        <div class="hero-cta-mobile a4">
+          <button class="btn-hero" onclick="goToForm()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5" />
+              <path d="M2 12l10 5 10-5" />
+            </svg>
+            Register for NFET
+          </button>
+          <div class="hero-price-note">
+            <strong>₹250 <sup style="font-size:.55em;color:rgba(255,255,255,.5)">+ taxes</sup></strong>
+            Registration fee
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: Lead form -->
+      <div class="hero-right a4">
+        <div class="lead-form" id="hero-form">
+          <div class="lf-title">Get your NFET Admit Card</div>
+          <div class="lf-sub">Register in 2 minutes. Prep Kit + Mock Test included free.</div>
+
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_name">Full Name*</label>
+            <input class="lf-input" id="gcc_name" type="text" placeholder="Your full name" autocomplete="name">
+            <div class="field-error" id="err_gcc_name"></div>
+          </div>
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_email">Email Address*</label>
+            <input class="lf-input" id="gcc_email" type="email" placeholder="your@email.com" autocomplete="email">
+            <div class="field-error" id="err_gcc_email"></div>
+          </div>
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_phone">Mobile Number*</label>
+            <input class="lf-input" id="gcc_phone" type="tel" placeholder="10-digit mobile number" autocomplete="tel">
+            <div class="field-error" id="err_gcc_phone"></div>
+          </div>
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_state">State/UT*</label>
+            <select class="lf-input lf-select" id="gcc_state">
+              <option value="" disabled selected>Select state</option>
+            </select>
+            <div class="field-error" id="err_gcc_state"></div>
+          </div>
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_city">City*</label>
+            <select class="lf-input lf-select" id="gcc_city">
+              <option value="" disabled selected>Select city</option>
+            </select>
+            <div class="field-error" id="err_gcc_city"></div>
+          </div>
+          <div class="lf-field">
+            <label class="lf-label" for="gcc_degree">Institution/University*</label>
+            <div class="custom-select-container">
+              <input type="text" class="lf-input" id="gcc_degree_search" placeholder="Search or select university..."
+                autocomplete="off">
+              <input type="hidden" id="gcc_degree" value="">
+              <div class="custom-select-options" id="gcc_degree_options"></div>
+            </div>
+            <div class="field-error" id="err_gcc_degree"></div>
+          </div>
+          <div>
+            <input type="checkbox" name="" id="gcc_commerce_graduate">
+            <label for="gcc_commerce_graduate" style="font-size:.75rem;color:var(--t3);"> Are you a commerce graduate
+              (B.Com/M.Com)?</label>
+            <div class="field-error" id="err_gcc_commerce_graduate"></div>
+          </div>
+          <div id="gccFormError"
+            style="display:none; color:var(--rd); font-size:0.75rem; margin: 10px 0; padding: 10px; background: rgba(192,57,43,0.08); border-radius: 8px; border-left: 3px solid var(--rd);">
+          </div>
+          <button class="lf-btn" onclick="handlePayClick()">
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg>
+            Pay ₹249 &amp; Register
+          </button>
+          <div class="lf-price">Registration fee: <strong>₹249</strong></div>
+          <div class="lf-secure">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+            SSL secured · UPI · Cards · Net Banking
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Stat strip — flush to bottom of hero -->
+    <div class="hero-stats a5">
+      <div class="w hero-stats-in">
+        <div class="hst">
+          <div class="hst-v">₹10 LPA</div>
+          <div class="hst-l">Confirmed offer before training</div>
+        </div>
+        <div class="hst">
+          <div class="hst-v">60 MCQs</div>
+          <div class="hst-l">Online · 90 min · No negative marking</div>
+        </div>
+        <div class="hst">
+          <div class="hst-v">May 15</div>
+          <div class="hst-l">Registration deadline</div>
+        </div>
+        <div class="hst">
+          <div class="hst-v">UK ACCA</div>
+          <div class="hst-l">Globally recognised qualification</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── COUNTDOWN ─────────────────────────────────────── -->
+  <div class="cd">
+    <div class="cd-in">
+      <div class="cd-lbl">Registration closes<strong>May 15, 2026</strong></div>
+      <div class="cd-timer">
+        <div class="tu"><span class="tn" id="cd-d">00</span>
+          <div class="tl">Days</div>
+        </div>
+        <div class="tsep">:</div>
+        <div class="tu"><span class="tn" id="cd-h">00</span>
+          <div class="tl">Hours</div>
+        </div>
+        <div class="tsep">:</div>
+        <div class="tu"><span class="tn" id="cd-m">00</span>
+          <div class="tl">Mins</div>
+        </div>
+        <div class="tsep">:</div>
+        <div class="tu"><span class="tn" id="cd-s">00</span>
+          <div class="tl">Secs</div>
+        </div>
+      </div>
+      <button class="cd-btn" onclick="goToForm()">Register Now</button>
+    </div>
+  </div>
+
+  <!-- ── REGISTRATION CARD ──────────────────────────────── -->
+  <section class="sec" id="register">
+    <div class="w">
+      <div class="sec-lbl">Registration</div>
+      <h2 class="sec-h">Everything included with NFET registration</h2>
+      <p class="sec-p">One registration gives you your exam slot, prep materials, a full mock test, and your path to job
+        interviews with the world's top companies.</p>
+      <div class="reg-grid mt4 reveal">
+        <div class="reg-card">
+          <div class="reg-top">
+            <div class="reg-badge">NFET 2026</div>
+            <div class="price-row">
+              <span class="p-cur">₹</span>
+              <span class="p-amt">249</span>
+              <!-- <span class="p-tax">+ applicable taxes</span> -->
+            </div>
+            <div class="p-sub">One-time registration fee · Secure payment</div>
+          </div>
+          <div class="reg-body">
+            <div class="bonus">
+              <div class="bonus-ico">🎁</div>
+              <div>
+                <h5>Free on successful registration</h5>
+                <p><strong>NFET Prep Starter Kit</strong> — section-wise study guide, key concepts, and practice
+                  questions across all five syllabus areas. Delivered to your email instantly.</p>
+              </div>
+            </div>
+            <div class="bonus">
+              <div class="bonus-ico">📝</div>
+              <div>
+                <h5>Free Mock Test included</h5>
+                <p><strong>Full-length NFET Mock Test</strong> — timed, in actual exam format, with performance analysis
+                  so you walk in prepared and confident.</p>
+              </div>
+            </div>
+            <ul class="fl">
+              <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="1,6 4,9 11,2" />
+                  </svg></span><span><strong>Official NFET Admit Card</strong> — entry credential for the exam and job
+                  interviews in Gurugram</span></li>
+              <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="1,6 4,9 11,2" />
+                  </svg></span><span><strong>Flexible exam slot</strong> — choose your preferred date and time from
+                  available windows</span></li>
+              <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="1,6 4,9 11,2" />
+                  </svg></span><span><strong>Job interview eligibility</strong> — top performers invited to Gurugram to
+                  meet world's top company recruiters</span></li>
+              <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
+                    stroke-width="2.5">
+                    <polyline points="1,6 4,9 11,2" />
+                  </svg></span><span><strong>British Council Communication Kit</strong> (worth ₹600) — free for
+                  meritorious candidates</span></li>
+            </ul>
+            <button class="btn-pay" onclick="goToForm()">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect x="2" y="5" width="20" height="14" rx="2" />
+                <line x1="2" y1="10" x2="22" y2="10" />
+              </svg>
+              Pay &amp; Register
+            </button>
+            <div class="btn-pay-sub">₹249</div>
+            <div class="sec-note">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
+              SSL secured · UPI · Cards · Net Banking
+            </div>
+          </div>
+        </div>
+        <div class="info-side">
+          <div class="ib">
+            <div class="ib-h">Exam Details</div>
+            <div class="ir"><span class="ik">Questions</span><span class="iv">60 MCQs</span></div>
+            <div class="ir"><span class="ik">Duration</span><span class="iv">90 minutes</span></div>
+            <div class="ir"><span class="ik">Format</span><span class="iv">Online from home</span></div>
+            <div class="ir"><span class="ik">Device</span><span class="iv">Laptop / Desktop</span></div>
+            <div class="ir"><span class="ik">Proctoring</span><span class="iv">AI + live human</span></div>
+            <div class="ir"><span class="ik">Negative marking</span><span class="iv">None — attempt all</span></div>
+            <div class="ir"><span class="ik">Scoring</span><span class="iv">0.75–1.25 per question</span></div>
+          </div>
+          <div class="ib">
+            <div class="ib-h">Eligibility</div>
+            <div class="ir"><span class="ik">Qualification</span><span class="iv">B.Com First Division</span></div>
+            <div class="ir"><span class="ik">Also eligible</span><span class="iv">B.Com + M.Com / MBA</span></div>
+            <div class="ir"><span class="ik">Nationality</span><span class="iv">Indian Citizen</span></div>
+            <div class="ir"><span class="ik">Born after</span><span class="iv">January 1, 1996</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── JOURNEY ────────────────────────────────────────── -->
+  <section class="sec sec-alt">
+    <div class="w">
+      <div class="sec-lbl">What happens next</div>
+      <h2 class="sec-h">From NFET to ₹10 LPA — your exact path</h2>
+      <div class="journey mt4 reveal">
+        <div class="jline"></div>
+        <div class="step act">
+          <div class="sno">1</div>
+          <div class="sbody">
+            <div class="stag stag-p">You are here</div>
+            <h3>Register — receive your prep kit immediately</h3>
+            <p>Complete registration. Choose your exam slot. Your Prep Starter Kit, Mock Test access, and Admit Card
+              arrive within 24 hours.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="sno">2</div>
+          <div class="sbody">
+            <h3>Take NFET — online, from anywhere in India</h3>
+            <p>60 questions. 90 minutes. From your laptop at home. No negative marking — attempt every question.
+              AI-enabled with live human supervision.</p>
+          </div>
+        </div>
+        <div class="step hl">
+          <div class="sno">3</div>
+          <div class="sbody">
+            <div class="stag stag-o">Job Interviews — Gurugram*</div>
+            <h3>Invitation to meet the world's top company recruiters</h3>
+            <p>Top NFET performers are invited to job interviews in Gurugram. Recruiting teams from the world's leading
+              consulting firms, global banks, and MNCs interview merit-verified candidates — not anonymous CVs.</p>
+            <p class="sfn">* All expenses paid for eligible achievers</p>
+          </div>
+        </div>
+        <div class="step hl">
+          <div class="sno">4</div>
+          <div class="sbody">
+            <div class="stag stag-o">The hire-first model</div>
+            <h3>Employment offer — ₹10 LPA before training starts</h3>
+            <p>Selected candidates receive a confirmed employment offer at ₹10 LPA before the 12-month training program
+              begins. The job is confirmed first. Training follows.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="sno">5</div>
+          <div class="sbody">
+            <h3>12-month AEIAP — UK ACCA qualification</h3>
+            <p>Train at GCC School's campus on the program leading to the UK ACCA — the professional accounting
+              credential held by finance professionals at the world's top firms — while your employment is already
+              confirmed.</p>
+          </div>
+        </div>
+        <div class="step" style="padding-bottom:0">
+          <div class="sno">6</div>
+          <div class="sbody">
+            <h3>Join your employer — globally qualified and ready</h3>
+            <p>Begin your career at a top global company. Offer confirmed in step 4. Qualification earned in step 5.
+              Career starts in step 6.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+     EXAM DETAILS — bold 2×2 mobile-first layout
+══════════════════════════════════════════════════════ -->
+  <section class="sec">
+    <div class="w">
+      <div class="sec-lbl">About the Exam</div>
+      <h2 class="sec-h">NFET — what you need to know</h2>
+
+      <!-- 4 big number tiles — 2 light + 2 dark for contrast -->
+      <div class="exam-nums mt3 reveal">
+        <div class="en en-light rd1">
+          <div class="en-num">60</div>
+          <div class="en-lbl">Questions</div>
+          <div class="en-desc">Multiple choice. Tests exactly what you studied in B.Com — no surprises.</div>
+        </div>
+        <div class="en en-dark rd2">
+          <div class="en-num">90</div>
+          <div class="en-lbl">Minutes</div>
+          <div class="en-desc">Continuous online assessment. ~90 seconds per question.</div>
+        </div>
+        <div class="en en-dark rd3">
+          <div class="en-num">0</div>
+          <div class="en-lbl">Negative marking</div>
+          <div class="en-desc">No penalty for wrong answers. Attempt every single question — never leave a blank.</div>
+        </div>
+        <div class="en en-light rd4">
+          <div class="en-num">1.25</div>
+          <div class="en-lbl">Max score / question</div>
+          <div class="en-desc">Variable scoring from 0.75 to 1.25 per question based on difficulty.</div>
+        </div>
+      </div>
+
+      <!-- 2 dark feature cards -->
+      <div class="exam-feats reveal">
+        <div class="ef">
+          <div class="ef-ico">🖥️</div>
+          <div>
+            <h4>Take it from anywhere in India</h4>
+            <p>Fully online from your laptop or desktop with a webcam and stable internet. No travel required for the
+              exam. Mobile phones not permitted.</p>
+          </div>
+        </div>
+        <div class="ef">
+          <div class="ef-ico">🔒</div>
+          <div>
+            <h4>AI-enabled · Live human supervised</h4>
+            <p>Conducted on a secure platform with AI monitoring and live human proctors throughout — fair,
+              professional, and transparent for every candidate.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Syllabus -->
+      <div class="syl-box reveal">
+        <div class="syl-hdr">
+          <div class="syl-hdr-t">Syllabus &amp; Weightage</div>
+          <div class="syl-hdr-s">5 sections · 60 questions</div>
+        </div>
+        <div class="si">
+          <div class="si-top"><span class="si-n">Accounting &amp; Finance Fundamentals</span><span
+              class="si-p">30%</span></div>
+          <div class="si-track">
+            <div class="si-fill" data-w="30" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="si">
+          <div class="si-top"><span class="si-n">English &amp; Business Communication</span><span
+              class="si-p">30%</span></div>
+          <div class="si-track">
+            <div class="si-fill" data-w="30" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="si">
+          <div class="si-top"><span class="si-n">Auditing &amp; Analytical Reasoning</span><span class="si-p">20%</span>
+          </div>
+          <div class="si-track">
+            <div class="si-fill" data-w="20" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="si">
+          <div class="si-top"><span class="si-n">Quantitative Aptitude</span><span class="si-p">10%</span></div>
+          <div class="si-track">
+            <div class="si-fill" data-w="10" style="width:0%"></div>
+          </div>
+        </div>
+        <div class="si">
+          <div class="si-top"><span class="si-n">Business &amp; Economic Awareness</span><span class="si-p">10%</span>
+          </div>
+          <div class="si-track">
+            <div class="si-fill" data-w="10" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+     ELIGIBILITY — purple banner + card grid
+══════════════════════════════════════════════════════ -->
+  <section class="sec sec-alt">
+    <div class="w">
+      <div class="sec-lbl">Eligibility</div>
+      <h2 class="sec-h">Who can register for NFET?</h2>
+
+      <div class="elig-hero mt3 reveal">
+        <div class="elig-hero-icon">🎯</div>
+        <div class="elig-hero-text">
+          <h3>Meet all 4 criteria?<br>You can register right now.</h3>
+          <p>NFET is open to B.Com first-division graduates across every state in India. No entrance coaching required —
+            the syllabus is what you already studied.</p>
+        </div>
+      </div>
+
+      <div class="elig-cards reveal">
+        <div class="ec rd1">
+          <div class="ec-ico">🎓</div>
+          <div class="ec-body">
+            <h4>B.Com First Division</h4>
+            <p>Also open to B.Com + M.Com, MBA, or other PG qualifications</p>
+          </div>
+        </div>
+        <div class="ec rd2">
+          <div class="ec-ico">🇮🇳</div>
+          <div class="ec-body">
+            <h4>Indian Citizen</h4>
+            <p>Open to candidates across all states and union territories</p>
+          </div>
+        </div>
+        <div class="ec rd3">
+          <div class="ec-ico">📅</div>
+          <div class="ec-body">
+            <h4>Born after Jan 1, 1996</h4>
+            <p>Age eligibility verified at the time of your exam date</p>
+          </div>
+        </div>
+        <div class="ec rd4">
+          <div class="ec-ico">💻</div>
+          <div class="ec-body">
+            <h4>Laptop + Webcam + Internet</h4>
+            <p>Required to appear for the online proctored exam from home</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <button onclick="goToForm()"
+          style="background:var(--or);color:#fff;font-size:.93rem;font-weight:700;padding:14px 30px;border-radius:100px;letter-spacing:.04em;box-shadow:var(--sh-o);display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;font-family:var(--f);transition:all .25s">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2L2 7l10 5 10-5-10-5z" />
+            <path d="M2 17l10 5 10-5" />
+            <path d="M2 12l10 5 10-5" />
+          </svg>
+          I qualify — Register Now
+        </button>
+        <span style="font-size:.78rem;color:var(--t3)">Registration closes May 15, 2026</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREDIBILITY ────────────────────────────────────── -->
+  <section class="sec sec-dp">
+    <div class="w">
+      <div class="sec-lbl sec-lbl-l">Why trust this</div>
+      <h2 class="sec-h sec-h-l">Backed by real credentials</h2>
+      <p class="sec-p sec-p-l">Every element of GCC School is independently verifiable.</p>
+      <div class="cred-grid mt4">
+        <div class="cc reveal rd1">
+          <div class="cc-ico">🏢</div>
+          <h4>Campus in Gurugram</h4>
+          <p>Inside one of India's most prestigious commercial districts — the same address as the global companies that
+            hire through this process.</p>
+        </div>
+        <div class="cc reveal rd2">
+          <div class="cc-ico">🌐</div>
+          <h4>UK ACCA Qualification</h4>
+          <p>A UK-accredited professional accounting credential. The standard held by senior finance professionals at
+            the world's top firms globally.</p>
+        </div>
+        <div class="cc reveal rd3">
+          <div class="cc-ico">🤝</div>
+          <h4>Real Hiring Partners</h4>
+          <p>World's top consulting firms, global banks, and international MNCs participate in GCC School's interview
+            process. Formal offers before training.</p>
+        </div>
+        <div class="cc reveal rd1">
+          <div class="cc-ico">🎗</div>
+          <h4>British Council Kit</h4>
+          <p>Meritorious NFET candidates receive the British Council Communication Evaluation Kit — an internationally
+            recognised credential.</p>
+        </div>
+        <div class="cc reveal rd2">
+          <div class="cc-ico">✈️</div>
+          <h4>All Expenses Paid*</h4>
+          <p>Eligible achievers receive 100% travel reimbursement to Gurugram for job interviews. No financial barrier
+            for those who earn it.</p>
+        </div>
+        <div class="cc reveal rd3">
+          <div class="cc-ico">🔒</div>
+          <h4>Secure Online Exam</h4>
+          <p>AI-enabled with live human supervision ensuring a fair, professional, and transparent assessment for every
+            candidate.</p>
+        </div>
+      </div>
+      <p style="margin-top:20px;font-size:.67rem;color:rgba(255,255,255,.24);text-align:center">* Travel reimbursement
+        applicable for eligible NFET achievers per GCC School's criteria</p>
+    </div>
+  </section>
+
+  <!-- ── VOICES ─────────────────────────────────────────── -->
+  <section class="sec sec-alt">
+    <div class="w">
+      <div class="sec-lbl">Voices from GCC careers</div>
+      <h2 class="sec-h">From those already there</h2>
+      <div class="vgrid mt4 reveal">
+        <div class="vc">
+          <div class="vq">"</div>
+          <p class="vt">I work in the finance division of one of the world's top consulting firms in Gurugram. The work
+            is real, high-level, and global. GCC School is the pipeline B.Com graduates needed and didn't have before.
+          </p>
+          <div class="vn">Senior Finance Professional</div>
+          <div class="vr">GCC, Top Global Consulting Firm · Gurugram</div>
+        </div>
+        <div class="vc">
+          <div class="vq">"</div>
+          <p class="vt">When I attend GCC School's job interviews, the candidates are genuinely different. They've
+            cleared a national exam. The conversation is at a professional level from minute one. That's rare in B.Com
+            recruitment.</p>
+          <div class="vn">Finance Hiring Manager</div>
+          <div class="vr">Global MNC GCC · India</div>
+        </div>
+        <div class="vc">
+          <div class="vq">"</div>
+          <p class="vt">The mock test made the exam feel completely familiar. I walked out of the interviews with an
+            offer the same day. The prep kit was genuinely useful — especially the audit and reasoning section I was
+            worried about.</p>
+          <div class="vn">NFET Graduate</div>
+          <div class="vr">GCC School · Now at a top global finance firm</div>
+        </div>
+        <div class="vc">
+          <div class="vq">"</div>
+          <p class="vt">Year one difference between me and my B.Com classmates: ₹7 lakh. The decision to register took 5
+            minutes. What it delivered changed the entire trajectory of my career.</p>
+          <div class="vn">B.Com Graduate, NFET Alumna</div>
+          <div class="vr">GCC School · UK ACCA in progress</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ────────────────────────────────────────────── -->
+  <section class="sec">
+    <div class="w">
+      <div class="sec-lbl">Common questions</div>
+      <h2 class="sec-h">Frequently asked</h2>
+      <div class="faqs mt4 reveal">
+        <div class="fi2"><button class="fq" onclick="faq(this)">What do I receive immediately after registering?<span
+              class="fic"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="2,3 5,7 8,3" />
+              </svg></span></button>
+          <div class="fa">
+            <div class="fab">Within 24 hours: (1) NFET Prep Starter Kit — section-wise study guide with practice
+              questions across all five syllabus areas. (2) Full-length Mock Test — timed, in actual exam format, with
+              performance analysis. (3) Official NFET Admit Card — your entry credential for your exam date and job
+              interviews in Gurugram.</div>
+          </div>
+        </div>
+        <div class="fi2"><button class="fq" onclick="faq(this)">Is NFET really online? What equipment do I need?<span
+              class="fic"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="2,3 5,7 8,3" />
+              </svg></span></button>
+          <div class="fa">
+            <div class="fab">Yes — fully online from anywhere in India. You need a laptop or desktop (mobile not
+              allowed), a working webcam and microphone, and a stable internet connection. Sit in a quiet, well-lit
+              room. AI-enabled with live human supervision throughout. No travel required for the exam.</div>
+          </div>
+        </div>
+        <div class="fi2"><button class="fq" onclick="faq(this)">What are the job interviews in Gurugram like?<span
+              class="fic"><svg width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <polyline points="2,3 5,7 8,3" />
+              </svg></span></button>
+          <div class="fa">
+            <div class="fab">Top-performing NFET candidates are invited to GCC School's campus in Gurugram to meet
+              recruiting teams from the world's leading consulting firms, global banks, and MNCs. These are structured
+              professional interviews — not a placement fair. You arrive as a merit-verified candidate. Selected
+              candidates receive formal employment offers at ₹10 LPA before the 12-month training begins. Eligible
+              achievers receive 100% travel reimbursement to Gurugram.</div>
+          </div>
+        </div>
+        <div class="fi2"><button class="fq" onclick="faq(this)">What is the UK ACCA qualification?<span class="fic"><svg
+                width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,3 5,7 8,3" />
+              </svg></span></button>
+          <div class="fa">
+            <div class="fab">ACCA — the Association of Chartered Certified Accountants — is a UK-accredited professional
+              accounting credential. It is held by senior finance professionals at the world's top consulting firms,
+              global banks, and MNCs. GCC School's 12-month AEIAP puts you on the ACCA qualification pathway while your
+              employment offer is already confirmed — you pursue both simultaneously.</div>
+          </div>
+        </div>
+        <div class="fi2"><button class="fq" onclick="faq(this)">How should I prepare for NFET?<span class="fic"><svg
+                width="9" height="9" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="2,3 5,7 8,3" />
+              </svg></span></button>
+          <div class="fa">
+            <div class="fab">NFET tests what you studied in B.Com: Accounting & Finance (30%), English & Business
+              Communication (30%), Auditing & Analytical Reasoning (20%), Quantitative Aptitude (10%), Business &
+              Economic Awareness (10%). Your free Prep Starter Kit gives you a section-wise strategy. Use the free Mock
+              Test to simulate actual conditions. Most important tip: no negative marking — attempt every question,
+              never leave a blank.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FINAL CTA ──────────────────────────────────────── -->
+  <section class="final">
+    <div class="w" style="position:relative;z-index:2">
+      <div class="sec-lbl sec-lbl-l">Register Today</div>
+      <h2>The job interviews in Gurugram are happening.<br><em>Will you be there?</em></h2>
+      <p class="final-sub">One exam. One decision. The world's top companies attend GCC School's process because
+        NFET-cleared B.Com graduates are genuinely different.</p>
+      <div>
+        <button class="btn-final" onclick="goToForm()">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="2" y="5" width="20" height="14" rx="2" />
+            <line x1="2" y1="10" x2="22" y2="10" />
+          </svg>
+          Register for NFET
+        </button>
+      </div>
+      <div class="final-price">Registration: <strong>₹249</strong></div>
+      <div class="final-note">Registration closes May 15, 2026</div>
+      <div><a href="/nfet-brochure.pdf" class="broch" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+            <line x1="12" y1="18" x2="12" y2="12" />
+            <line x1="9" y1="15" x2="15" y2="15" />
+          </svg>Download NFET brochure (PDF)</a></div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────── -->
+  <footer class="footer">
+    <strong>GCC School</strong> · Gurugram, Haryana · gccschool.com<br>
+    <span style="margin-top:5px;display:block">© 2026 GCC School · <a href="/terms-conditions">Terms</a> · <a
+        href="/privacy-policy">Privacy Policy</a></span>
+  </footer>
+
+  <script>
+    // Countdown to May 15, 2026
+    function tick() {
+      const d = new Date('2026-05-15T23:59:59'), n = new Date(), r = Math.max(0, d - n), p = x => String(Math.floor(x)).padStart(2, '0');
+      document.getElementById('cd-d').textContent = p(r / 86400000);
+      document.getElementById('cd-h').textContent = p((r % 86400000) / 3600000);
+      document.getElementById('cd-m').textContent = p((r % 3600000) / 60000);
+      document.getElementById('cd-s').textContent = p((r % 60000) / 1000);
+    }
+    tick(); setInterval(tick, 1000);
+
+    // Nav scroll — stays purple always (brand nav)
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 60), { passive: true });
+
+    // FAQ accordion
+    function faq(btn) {
+      const item = btn.closest('.fi2'), open = item.classList.contains('open');
+      document.querySelectorAll('.fi2.open').forEach(e => e.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    }
+
+    // Scroll reveal + syllabus bars
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          e.target.querySelectorAll('.si-fill,.syl-fill').forEach(b => b.style.width = b.dataset.w + '%');
+        }
+      });
+    }, { threshold: .1 });
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Stagger cred cards
+    document.querySelectorAll('.cc').forEach((el, i) => el.style.transitionDelay = (i % 3) * .07 + 's');
+
+    // Go to form (scrolls to hero form on mobile, #register on very small)
+    function goToForm() {
+      const form = document.getElementById('hero-form');
+      if (form) { form.scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+    }
+
+    function pay() {
+      handlePayClick();
+    }
+  </script>
+  <script src="index.js"></script>
+
+  <!-- Status Modal -->
+  <style>
+    .status-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+
+    .status-overlay.active {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .status-modal {
+      background: #fff;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 20px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      position: relative;
+      transform: translateY(20px);
+      transition: transform 0.3s;
+    }
+
+    .status-overlay.active .status-modal {
+      transform: translateY(0);
+    }
+
+    .status-close-btn {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+
+    .status-icon-wrap {
+      margin: 0 auto 20px;
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+
+    .status-icon-outer,
+    .status-icon-middle {
+      position: absolute;
+      border-radius: 50%;
+      border: 2px solid transparent;
+    }
+
+    .status-icon-inner {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .status-icon-inner svg {
+      width: 40px;
+      height: 40px;
+      stroke-width: 2;
+      fill: none;
+    }
+
+    /* Loading */
+    .status-icon-wrap.loading .status-icon-outer {
+      inset: 0;
+      border-top-color: var(--mp);
+      border-right-color: var(--dp);
+    }
+
+    .status-icon-wrap.loading .status-icon-middle {
+      inset: 10px;
+      border-bottom-color: var(--or);
+      border-left-color: var(--gd);
+    }
+
+    .status-icon-wrap.loading .status-icon-inner svg {
+      stroke: var(--dp);
+    }
+
+    /* Success */
+    .status-icon-wrap:not(.loading):not(.failed) .status-icon-outer {
+      inset: 0;
+      background: rgba(26, 122, 74, 0.1);
+    }
+
+    .status-icon-wrap:not(.loading):not(.failed) .status-icon-inner svg {
+      stroke: var(--gn);
+    }
+
+    /* Failed */
+    .status-icon-wrap.failed .status-icon-outer {
+      inset: 0;
+      background: rgba(192, 57, 43, 0.1);
+    }
+
+    .status-icon-wrap.failed .status-icon-inner svg {
+      stroke: var(--rd);
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 4px 12px;
+      border-radius: 100px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+
+    .status-badge.loading {
+      background: var(--orp);
+      color: var(--ord);
+    }
+
+    .status-badge:not(.loading):not(.failed) {
+      background: var(--gnp);
+      color: var(--gn);
+    }
+
+    .status-badge.failed {
+      background: rgba(192, 57, 43, 0.1);
+      color: var(--rd);
+    }
+
+    .status-modal h3 {
+      font-size: 1.5rem;
+      color: var(--dp);
+      margin-bottom: 8px;
+    }
+
+    .status-modal p {
+      font-size: 0.9rem;
+      color: var(--t2);
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .status-footer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--t3);
+    }
+
+    .green-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--gn);
+      border-radius: 50%;
+    }
+
+    .red-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--rd);
+      border-radius: 50%;
+    }
+
+    .status-retry-btn {
+      width: 100%;
+      padding: 12px;
+      background: var(--dp);
+      color: #fff;
+      border-radius: 10px;
+      font-weight: 600;
+      margin-top: 16px;
+      cursor: pointer;
+    }
+  </style>
+  <div id="statusModalOverlay" class="status-overlay">
+    <div class="status-modal">
+      <div class="status-close-btn" onclick="closeStatusModal()">✕</div>
+      <div id="statusIconWrap" class="status-icon-wrap loading"></div>
+      <div id="statusBadge" class="status-badge loading">✦ PROCESSING</div>
+      <h3 id="statusTitle">Please <span id="statusTitleHighlight" class="text-yellow">Wait</span></h3>
+      <p id="statusDesc"></p>
+      <div class="status-footer">
+        <div id="statusDot" class="green-dot"></div>
+        <span id="statusLeftText">Secure Connection</span>
+      </div>
+      <div id="statusPaymentId" style="font-size: 0.75rem; color: var(--t3); margin-top: 12px; display: none;"></div>
+      <button id="statusRetryBtn" class="status-retry-btn" style="display: none;" onclick="closeStatusModal()">Try
+        Again</button>
+    </div>
+  </div>
+  <script src="university-data.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,9 +1,9 @@
 
-var BASE_URL = "https://gcc-website-prod-932479078084.europe-west1.run.app";
-// var BASE_URL = "https://kcglobed-gcc-website-932479078084.asia-south1.run.app";
+// var BASE_URL = "https://gcc-website-prod-932479078084.europe-west1.run.app";
+var BASE_URL = "https://kcglobed-gcc-website-932479078084.asia-south1.run.app";
 // var mode = "production";
-var GCC_BACKEND_URL = "https://gccwebsite-admin-prod-backend-738131651355.asia-south1.run.app"
-// var GCC_BACKEND_URL = "https://gccwebsite-admin-backend-738131651355.asia-south1.run.app"
+// var GCC_BACKEND_URL = "https://gccwebsite-admin-prod-backend-738131651355.asia-south1.run.app"
+var GCC_BACKEND_URL = "https://gccwebsite-admin-backend-738131651355.asia-south1.run.app"
 var mode = "sandbox"
 var FORM_TYPE = 1
 
@@ -93,7 +93,7 @@ async function startPayment(name, email, mobile, city, state, degree) {
         phone: mobile,
         city,
         state,
-        degree,
+        university: degree,
         utm_campaign,
         utm_medium,
         utm_source,
@@ -516,7 +516,7 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 // Abandonment tracking
-let lastAbandonmentData = "";
+let abandonmentSentFor = "";
 
 function setupAbandonmentTracking() {
   const nameEl = document.getElementById("gcc_name");
@@ -539,9 +539,9 @@ function setupAbandonmentTracking() {
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
     if (!phone || !/^[6-9]\d{9}$/.test(phone)) return;
 
-    const currentData = JSON.stringify({ name, email, phone, city, state, degree });
-    if (currentData === lastAbandonmentData) return; // Already sent this exact data
-    lastAbandonmentData = currentData;
+    const contactKey = email + "|" + phone;
+    if (abandonmentSentFor === contactKey) return; // Already sent for this user
+    abandonmentSentFor = contactKey;
 
     const urlParams = new URLSearchParams(window.location.search);
     const utm_campaign = urlParams.get("utm_campaign") || "";
@@ -558,7 +558,7 @@ function setupAbandonmentTracking() {
           phone: phone,
           city: city,
           state: state,
-          degree: degree,
+          university: degree,
           utm_campaign,
           utm_medium,
           utm_source,
@@ -568,6 +568,7 @@ function setupAbandonmentTracking() {
       console.log("Abandonment form submitted");
     } catch (e) {
       console.error("Error submitting abandonment form", e);
+      abandonmentSentFor = "";
     }
   };
 

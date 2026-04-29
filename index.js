@@ -22,7 +22,7 @@ window.addEventListener("scroll", function () {
 
 function handlePayClick() {
   const fields = ["gcc_name", "gcc_email", "gcc_phone", "gcc_state", "gcc_city", "gcc_degree", "gcc_commerce_graduate"];
-  
+
   // Reset all errors
   fields.forEach(f => {
     const errEl = document.getElementById("err_" + f);
@@ -76,7 +76,7 @@ function setFieldError(fieldId, msg) {
 
 async function startPayment(name, email, mobile, city, state, degree) {
   console.log("Starting payment initialization...", { name, email, mobile, city, state, degree });
-  
+
   const urlParams = new URLSearchParams(window.location.search);
   const utm_campaign = urlParams.get("utm_campaign") || "";
   const utm_medium = urlParams.get("utm_medium") || "";
@@ -97,7 +97,7 @@ async function startPayment(name, email, mobile, city, state, degree) {
         utm_campaign,
         utm_medium,
         utm_source,
-        source:6,
+        source: 6,
       }),
     });
 
@@ -105,7 +105,7 @@ async function startPayment(name, email, mobile, city, state, degree) {
     console.log("createvslfinalform response:", formData);
 
     const latest_form_id = formData?.data?.id;
-    console.log(latest_form_id,'--------')
+    console.log(latest_form_id, '--------')
 
     if (!latest_form_id) {
       throw new Error("Form ID not received");
@@ -125,7 +125,8 @@ async function startPayment(name, email, mobile, city, state, degree) {
           form_type: 1,
           form_id: latest_form_id,
           source: 6,
-          action: "pay_now"
+          action: "pay_now",
+          commingAmount: 249
         }),
       });
 
@@ -149,7 +150,8 @@ async function startPayment(name, email, mobile, city, state, degree) {
         state,
         form_type: 2,
         form_id: latest_form_id,
-        source: 6
+        source: 6,
+        commingAmount: 249
       }),
     });
 
@@ -371,6 +373,7 @@ function reportFailure(cf_order_id, payment_id, description, code) {
       re_attempt_status: false,
       error_code: code || "",
       error_description: description || "",
+      commingAmount: 249
     }),
   }).then(res => res.json()).then(data => {
     console.log("report-payment-failure response:", data);
@@ -463,7 +466,7 @@ function initSearchableSelect() {
 
   const renderOptions = (filter = "") => {
     optionsContainer.innerHTML = "";
-    const filtered = universities.filter(uni => 
+    const filtered = universities.filter(uni =>
       uni.toLowerCase().includes(filter.toLowerCase())
     ).slice(0, 100); // Performance: show first 100 matches
 
@@ -509,7 +512,7 @@ function initSearchableSelect() {
   });
 }
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   loadStateCityData();
   loadUniversityData();
   setupAbandonmentTracking();

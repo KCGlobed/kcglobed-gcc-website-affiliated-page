@@ -163,6 +163,15 @@ async function startPayment(name, email, mobile, city, state, degree) {
       return;
     }
 
+    // GTM Lead Tracking: Fire only on successful form submission before moving to payment
+    if (!finalFormSubmitFired) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "final_form_submit"
+      });
+      finalFormSubmitFired = true;
+    }
+
     // ✅ Step 4: Launch Payment Gateway
     if (paymentData.gateway === "cashfree") {
       console.log("Launching Cashfree modal...");
@@ -520,6 +529,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // Abandonment tracking
 let abandonmentSentFor = "";
+let finalFormSubmitFired = false;
 
 function setupAbandonmentTracking() {
   const nameEl = document.getElementById("gcc_name");

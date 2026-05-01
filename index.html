@@ -16,7 +16,8 @@
     content="B.Com graduates are getting ₹10 LPA job offers before training starts. Register for NFET 2026.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="shortcut icon" href="https://storage.googleapis.com/static_files_backend/media/images/image.png" type="image/x-icon">
+  <link rel="shortcut icon" href="https://storage.googleapis.com/static_files_backend/media/images/image.png"
+    type="image/x-icon">
   <link
     href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600;1,700&display=swap"
     rel="stylesheet">
@@ -264,10 +265,11 @@
       color: #fff;
       line-height: 1.2;
     }
+
     .logo img {
       width: 160px;
       height: auto;
-     }
+    }
 
     .logo-tx small {
       display: block;
@@ -293,7 +295,7 @@
       background: var(--orl);
       transform: translateY(-1px);
     }
-  
+
 
     @media(max-width:440px) {
       .logo-tx {
@@ -2009,6 +2011,759 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
+
+    /* Implemented css */
+    /* ===== SCOPED CSS (NO SIDE EFFECTS) ===== */
+
+    .inc-wrapper .inc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media(min-width:600px) {
+      .inc-wrapper .inc-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(min-width:960px) {
+      .inc-wrapper .inc-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    /* CARD */
+    .inc-wrapper .inc-card {
+      border-radius: 22px;
+      padding: 28px 24px 24px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s;
+    }
+
+    .inc-wrapper .inc-card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* VARIANTS */
+    .inc-wrapper .inc-card-1 {
+      background: linear-gradient(145deg, #2A0550, #4A1270);
+    }
+
+    .inc-wrapper .inc-card-2 {
+      background: linear-gradient(145deg, #0E1640, #1C2C6E);
+    }
+
+    .inc-wrapper .inc-card-3 {
+      background: linear-gradient(145deg, #280810, #481020);
+    }
+
+    .inc-wrapper .inc-card-4 {
+      background: linear-gradient(145deg, #081820, #102A36);
+    }
+
+    /* CONTENT */
+    .inc-wrapper .inc-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .inc-wrapper .inc-badge {
+      font-size: .6rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .inc-wrapper .inc-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .inc-wrapper .inc-by {
+      font-size: .7rem;
+      color: rgba(255, 255, 255, .5);
+      margin-bottom: 12px;
+    }
+
+    .inc-wrapper .inc-stat {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .inc-wrapper .inc-stat-num {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #fff;
+    }
+
+    .inc-wrapper .inc-stat-label {
+      font-size: .7rem;
+      color: rgba(255, 255, 255, .5);
+    }
+
+    .inc-wrapper .inc-sep {
+      height: 1px;
+      background: rgba(255, 255, 255, .15);
+      margin-bottom: 12px;
+    }
+
+    .inc-wrapper .inc-desc {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 14px;
+    }
+
+    .inc-wrapper .inc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .inc-wrapper .inc-tag {
+      font-size: .65rem;
+      padding: 4px 10px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, .1);
+      color: rgba(255, 255, 255, .8);
+    }
+
+    /* ─── EXPERTS SECTION ────────────────────────────────── */
+    .experts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    @media(min-width:640px) {
+      .experts-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media(min-width:900px) {
+      .experts-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    .expert-card {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 16px;
+      padding: 20px 16px;
+      text-align: center;
+      transition: transform .25s, box-shadow .25s, border-color .25s;
+    }
+
+    .expert-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh-b);
+      border-color: var(--pb);
+    }
+
+    .expert-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      margin: 0 auto 12px;
+      background: linear-gradient(135deg, var(--dp), var(--mp));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: #fff;
+      border: 3px solid var(--pp);
+    }
+
+    .expert-exp {
+      display: inline-block;
+      background: var(--or);
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+      letter-spacing: .04em;
+    }
+
+    .expert-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--dp);
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+
+    .expert-title {
+      font-size: .72rem;
+      color: var(--mp);
+      font-weight: 600;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .expert-org {
+      font-size: .68rem;
+      color: var(--t3);
+      line-height: 1.3;
+    }
+
+    /* ─── PARTNERS SECTION ───────────────────────────────── */
+    .partners-section {
+      background: var(--off);
+      padding: 64px 0;
+    }
+
+    .partner-group {
+      margin-bottom: 40px;
+    }
+
+    .partner-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .partner-group-title {
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--mp);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1.5px solid var(--bdr);
+    }
+
+    .partner-logos {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .partner-pill {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 12px;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: all .2s;
+    }
+
+    .partner-pill:hover {
+      border-color: var(--pb);
+      box-shadow: var(--sh-a);
+    }
+
+    .partner-pill-ico {
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .partner-pill-text {
+      font-size: .78rem;
+      font-weight: 600;
+      color: var(--dp);
+      line-height: 1.2;
+    }
+
+    .partner-pill-text small {
+      display: block;
+      font-size: .65rem;
+      font-weight: 400;
+      color: var(--t3);
+    }
+
+    /* ─── COMPACT ELIGIBILITY ───────────────────────────── */
+    .elig-compact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .ec-compact {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 14px;
+      padding: 16px 20px;
+      flex: 1 1 240px;
+      transition: all .22s;
+    }
+
+    .ec-compact:hover {
+      border-color: var(--pb);
+      box-shadow: var(--sh-b);
+    }
+
+    .ec-compact-ico {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--dp), var(--mp));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.55rem;
+    }
+
+    .ec-compact-title {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--dp);
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+
+    .ec-compact-sub {
+      font-size: .74rem;
+      color: var(--t3);
+      line-height: 1.3;
+    }
+
+    .exam-nums {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    /* ── Base card ── */
+    .en {
+      border-radius: 22px;
+      overflow: hidden;
+      position: relative;
+      min-height: 240px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .35s cubic-bezier(.22, 1, .36, 1), box-shadow .35s;
+      cursor: default;
+    }
+
+    .en:hover {
+      transform: translateY(-8px);
+    }
+
+    /* ── Card 1: White + deep purple number ── */
+    .en-c1 {
+      background: #FFFFFF;
+      border: 2px solid #E8E0F0;
+    }
+
+    .en-c1:hover {
+      border-color: #7A2899;
+      box-shadow: 0 20px 60px rgba(59, 13, 80, .15);
+    }
+
+    /* ── Card 2: Rich dark purple, gold number ── */
+    .en-c2 {
+      background: linear-gradient(160deg, #1A0030 0%, #3B0D50 50%, #5A1080 100%);
+      border: 2px solid rgba(204, 122, 5, .3);
+      box-shadow: 0 4px 32px rgba(26, 0, 48, .5);
+    }
+
+    .en-c2:hover {
+      box-shadow: 0 20px 64px rgba(26, 0, 48, .65);
+      border-color: rgba(245, 166, 35, .55);
+    }
+
+    /* ── Card 3: Full orange gradient, white number ── */
+    .en-c3 {
+      background: linear-gradient(160deg, #6B2E00 0%, #CC7A05 55%, #E89800 100%);
+      border: 2px solid rgba(255, 220, 120, .25);
+      box-shadow: 0 4px 32px rgba(90, 42, 0, .45);
+    }
+
+    .en-c3:hover {
+      box-shadow: 0 20px 64px rgba(90, 42, 0, .6);
+      border-color: rgba(255, 230, 130, .4);
+    }
+
+    /* ── Card 4: White + orange number ── */
+    .en-c4 {
+      background: #FFFFFF;
+      border: 2px solid #E8E0F0;
+    }
+
+    .en-c4:hover {
+      border-color: rgba(204, 122, 5, .5);
+      box-shadow: 0 20px 60px rgba(204, 122, 5, .12);
+    }
+
+    /* ── Background glow orb on dark cards ── */
+    .en-c2::before {
+      content: '';
+      position: absolute;
+      bottom: -40px;
+      right: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204, 122, 5, .18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .en-c3::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, .12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ── Icon ── top-right, small ── */
+    .en-icon {
+      position: absolute;
+      top: 22px;
+      right: 22px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1;
+    }
+
+    .en-c1 .en-icon {
+      background: #F3EAF9;
+      border: 1.5px solid #D4B8E3;
+    }
+
+    .en-c2 .en-icon {
+      background: rgba(204, 122, 5, .15);
+      border: 1.5px solid rgba(204, 122, 5, .35);
+    }
+
+    .en-c3 .en-icon {
+      background: rgba(255, 255, 255, .15);
+      border: 1.5px solid rgba(255, 255, 255, .28);
+    }
+
+    .en-c4 .en-icon {
+      background: #FEF4E0;
+      border: 1.5px solid rgba(204, 122, 5, .3);
+    }
+
+    .en-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .en-c1 .en-icon svg {
+      color: #3B0D50;
+    }
+
+    .en-c2 .en-icon svg {
+      color: #F5A623;
+    }
+
+    .en-c3 .en-icon svg {
+      color: rgba(255, 255, 255, .95);
+    }
+
+    .en-c4 .en-icon svg {
+      color: #CC7A05;
+    }
+
+    /* ── Card body ── */
+    .en-body {
+      padding: 30px 26px 26px 28px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── The massive number ── */
+    .en-num {
+      font-size: clamp(4rem, 10vw, 6rem);
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 2px;
+      letter-spacing: -.03em;
+    }
+
+    .en-c1 .en-num {
+      color: #3B0D50;
+    }
+
+    .en-c2 .en-num {
+      color: #F5A623;
+    }
+
+    .en-c3 .en-num {
+      color: #FFFFFF;
+    }
+
+    .en-c4 .en-num {
+      color: #CC7A05;
+    }
+
+    /* ── Label ── */
+    .en-lbl {
+      font-size: .62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      margin-bottom: 18px;
+    }
+
+    .en-c1 .en-lbl {
+      color: #7A2899;
+    }
+
+    .en-c2 .en-lbl {
+      color: rgba(245, 166, 35, .7);
+    }
+
+    .en-c3 .en-lbl {
+      color: rgba(255, 255, 220, .85);
+    }
+
+    .en-c4 .en-lbl {
+      color: #CC7A05;
+    }
+
+    /* ── Divider ── */
+    .en-div {
+      height: 1px;
+      margin-bottom: 16px;
+    }
+
+    .en-c1 .en-div {
+      background: #E8E0F0;
+    }
+
+    .en-c2 .en-div {
+      background: rgba(204, 122, 5, .22);
+    }
+
+    .en-c3 .en-div {
+      background: rgba(255, 255, 255, .22);
+    }
+
+    .en-c4 .en-div {
+      background: rgba(204, 122, 5, .22);
+    }
+
+    /* ── Description ── */
+    .en-desc {
+      font-size: .8rem;
+      line-height: 1.6;
+      margin-top: auto;
+    }
+
+    .en-c1 .en-desc {
+      color: #4A3360;
+    }
+
+    .en-c2 .en-desc {
+      color: rgba(255, 255, 255, .6);
+    }
+
+    .en-c3 .en-desc {
+      color: rgba(255, 255, 220, .8);
+    }
+
+    .en-c4 .en-desc {
+      color: #4A3360;
+    }
+
+    /* ── Feature tiles ── */
+    .exam-feats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    @media(max-width:480px) {
+      .exam-feats {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .ef {
+      background: linear-gradient(145deg, #2A0550, #3D0D60);
+      border: 1.5px solid rgba(255, 255, 255, .08);
+      border-radius: 18px;
+      padding: 24px 22px;
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      transition: transform .25s, box-shadow .25s;
+    }
+
+    .ef:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(42, 5, 80, .45);
+    }
+
+    .ef-ico {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      border-radius: 13px;
+      background: rgba(255, 255, 255, .1);
+      border: 1.5px solid rgba(255, 255, 255, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ef-ico svg {
+      width: 22px;
+      height: 22px;
+      color: #F5A623;
+    }
+
+    .ef h4 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 5px;
+      line-height: 1.3;
+    }
+
+    .ef p {
+      font-size: .78rem;
+      color: rgba(255, 255, 255, .55);
+      line-height: 1.6;
+    }
+
+    .syl-box {
+      background: var(--off);
+      border: 1.5px solid var(--bdr);
+      border-radius: 18px;
+      padding: 28px 26px;
+    }
+
+    .syl-hdr {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+    }
+
+    .syl-hdr-t {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      color: var(--mp);
+    }
+
+    .syl-hdr-s {
+      font-size: .72rem;
+      color: var(--t3);
+    }
+
+    .si {
+      margin-bottom: 18px;
+    }
+
+    .si:last-child {
+      margin-bottom: 0;
+    }
+
+    .si-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .si-n {
+      font-size: .86rem;
+      font-weight: 500;
+      color: var(--t1);
+    }
+
+    .si-p {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--dp);
+      min-width: 46px;
+      text-align: right;
+    }
+
+    .si-track {
+      height: 8px;
+      background: var(--bdr);
+      border-radius: 100px;
+      overflow: hidden;
+    }
+
+    .si-fill {
+      height: 100%;
+      border-radius: 100px;
+      background: linear-gradient(90deg, var(--dp), var(--or));
+    }
+
+    .si-fill[data-w="30"] {
+      animation: fill30 1.4s .3s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .si-fill[data-w="20"] {
+      animation: fill20 1.4s .4s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    .si-fill[data-w="10"] {
+      animation: fill10 1.4s .5s cubic-bezier(.22, 1, .36, 1) both;
+    }
+
+    @keyframes fill30 {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 30%
+      }
+    }
+
+    @keyframes fill20 {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 20%
+      }
+    }
+
+    @keyframes fill10 {
+      from {
+        width: 0
+      }
+
+      to {
+        width: 10%
+      }
+    }
   </style>
 </head>
 
@@ -2021,7 +2776,8 @@
       <div class="logo">
         <!-- <div class="logo-mk">GCC</div>
         <div class="logo-tx">GCC School<small>India's 1st Hire-First Institution</small></div> -->
-        <img src="https://storage.googleapis.com/static_files_backend/media/images/GCC-School-Logo-Golden.png" alt="" srcset="">
+        <img src="https://storage.googleapis.com/static_files_backend/media/images/GCC-School-Logo-Golden.png" alt=""
+          srcset="">
       </div>
       <button class="nav-cta" onclick="goToForm()">Register for NFET</button>
     </div>
@@ -2065,10 +2821,10 @@
         <div class="hero-rule a3"></div>
 
         <p class="hero-sub a3">
-          GCC School flipped the model for B.Com first-division graduates. Clear NFET — the national entrance test — and
-          walk into job interviews in Gurugram where the world's top consulting firms and global banks make you an
-          employment offer <em style="color:rgba(255,255,255,.8);font-style:normal;font-weight:600">before</em> your
-          12-month training program begins.
+          GCC School flipped the model for B.Com graduates. Clear NFET — the national entrance test — and walk into job
+          interviews in Gurugram where the world's top consulting firms and global banks make you an employment offer
+          <em style="color:rgba(255,255,255,.8);font-style:normal;font-weight:600">before</em> your 12-month training
+          program begins.
         </p>
 
         <!-- mobile CTA — hidden on desktop -->
@@ -2082,7 +2838,7 @@
             Register for NFET
           </button>
           <div class="hero-price-note">
-            <strong>₹250 <sup style="font-size:.55em;color:rgba(255,255,255,.5)">+ taxes</sup></strong>
+            <strong>₹249 <sup style="font-size:.55em;color:rgba(255,255,255,.5)">+ taxes</sup></strong>
             Registration fee
           </div>
         </div>
@@ -2150,7 +2906,7 @@
             </svg>
             Pay ₹249 &amp; Register
           </button>
-          <div class="lf-price">Registration fee: <strong>₹249</strong></div>
+          <div class="lf-price">Registration fee: <strong>₹249 <sup>+ taxes</sup></strong></div>
           <div class="lf-secure">
             <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -2224,7 +2980,7 @@
             <div class="price-row">
               <span class="p-cur">₹</span>
               <span class="p-amt">249</span>
-              <!-- <span class="p-tax">+ applicable taxes</span> -->
+              <span class="p-tax">+ applicable taxes</span>
             </div>
             <div class="p-sub">One-time registration fee · Secure payment</div>
           </div>
@@ -2261,11 +3017,11 @@
                     <polyline points="1,6 4,9 11,2" />
                   </svg></span><span><strong>Job interview eligibility</strong> — top performers invited to Gurugram to
                   meet world's top company recruiters</span></li>
-              <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
+              <!-- <li class="fi"><span class="tick"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor"
                     stroke-width="2.5">
                     <polyline points="1,6 4,9 11,2" />
                   </svg></span><span><strong>British Council Communication Kit</strong> (worth ₹600) — free for
-                  meritorious candidates</span></li>
+                  meritorious candidates</span></li> -->
             </ul>
             <button class="btn-pay" onclick="goToForm()">
               <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -2274,7 +3030,7 @@
               </svg>
               Pay &amp; Register
             </button>
-            <div class="btn-pay-sub">₹249</div>
+            <div class="btn-pay-sub">₹249 + applicable taxes</div>
             <div class="sec-note">
               <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
@@ -2302,6 +3058,99 @@
             <div class="ir"><span class="ik">Born after</span><span class="iv">January 1, 1996</span></div>
           </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="inc-wrapper sec sec-dp">
+    <div class="w">
+      <div class="sec-lbl sec-lbl-l">What you get</div>
+      <h2 class="sec-h sec-h-l">A portfolio of globally recognised credentials</h2>
+      <p class="sec-p sec-p-l">GCC School's 12-month AEIAP programme is built around internationally recognised
+        qualifications — giving you the academic, professional, and communication credentials that top global employers
+        demand.</p>
+      <div class="inc-grid mt4 reveal">
+
+        <div class="inc-card inc-card-1">
+          <div class="inc-icon">🏆</div>
+          <div class="inc-badge">Core Qualification</div>
+          <div class="inc-title">UK ACCA</div>
+          <div class="inc-by">Association of Chartered Certified Accountants</div>
+          <div class="inc-stat">
+            <span class="inc-stat-num">180+</span>
+            <span class="inc-stat-label">countries<br>recognise ACCA</span>
+          </div>
+          <div class="inc-sep"></div>
+          <div class="inc-desc">The world's most globally recognised professional accounting qualification. 147,000+
+            members across 83 global offices. B.Com graduates receive 5 subject exemptions (BT, MA, FA, TX, LW) —
+            fast-tracking the full qualification.</div>
+          <div class="inc-tags">
+            <span class="inc-tag">5 Exemptions for B.Com</span>
+            <span class="inc-tag">147K+ Members</span>
+            <span class="inc-tag">424K+ Students</span>
+          </div>
+        </div>
+
+        <div class="inc-card inc-card-2">
+          <div class="inc-icon">🌐</div>
+          <div class="inc-badge">Communication</div>
+          <div class="inc-title">British Council English Certification</div>
+          <div class="inc-by">British Council</div>
+          <div class="inc-stat">
+            <span class="inc-stat-num">18</span>
+            <span class="inc-stat-label">credits · English<br>for Work</span>
+          </div>
+          <div class="inc-sep"></div>
+          <div class="inc-desc">Builds global communication confidence for multinational GCC workplaces, aligned with
+            international standards. Delivered in hybrid mode during Trimesters 1 & 2 — fully integrated with no extra
+            academic load.</div>
+          <div class="inc-tags">
+            <span class="inc-tag">Internationally Recognised</span>
+            <span class="inc-tag">Hybrid Delivery</span>
+            <span class="inc-tag">GCC-Aligned</span>
+          </div>
+        </div>
+
+        <div class="inc-card inc-card-3">
+          <div class="inc-icon">📋</div>
+          <div class="inc-badge">Management</div>
+          <div class="inc-title">PGCM — Public Accounting</div>
+          <div class="inc-by">AIMA · AICTE Approved</div>
+          <div class="inc-stat">
+            <span class="inc-stat-num">100%</span>
+            <span class="inc-stat-label">mapped to<br>ACCA papers</span>
+          </div>
+          <div class="inc-sep"></div>
+          <div class="inc-desc">Post Graduate Certificate in Management awarded alongside ACCA. Every module maps
+            directly to an ACCA paper — zero additional academic load. Online exam mode. Strengthens business and public
+            accounting foundations.</div>
+          <div class="inc-tags">
+            <span class="inc-tag">AICTE Approved</span>
+            <span class="inc-tag">AIMA Certified</span>
+            <span class="inc-tag">PG Level</span>
+          </div>
+        </div>
+
+        <div class="inc-card inc-card-4">
+          <div class="inc-icon">🎓</div>
+          <div class="inc-badge">Optional</div>
+          <div class="inc-title">MSc in Professional Accountancy</div>
+          <div class="inc-by">University of London</div>
+          <div class="inc-stat">
+            <span class="inc-stat-num">60</span>
+            <span class="inc-stat-label">credits · 1-year<br>programme</span>
+          </div>
+          <div class="inc-sep"></div>
+          <div class="inc-desc">Globally recognised master's degree. ACCA members complete just 3 modules — 2 electives
+            (15 credits each) and a Capstone project (30 credits). 100% online via University of London. No additional
+            exams required.</div>
+          <div class="inc-tags">
+            <span class="inc-tag">University of London</span>
+            <span class="inc-tag">Fully Online</span>
+            <span class="inc-tag">Master's Level</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -2378,34 +3227,95 @@
       <div class="sec-lbl">About the Exam</div>
       <h2 class="sec-h">NFET — what you need to know</h2>
 
-      <!-- 4 big number tiles — 2 light + 2 dark for contrast -->
+      <!-- 4 bold exam stat cards -->
       <div class="exam-nums mt3 reveal">
-        <div class="en en-light rd1">
-          <div class="en-num">60</div>
-          <div class="en-lbl">Questions</div>
-          <div class="en-desc">Multiple choice. Tests exactly what you studied in B.Com — no surprises.</div>
+
+        <div class="en en-c1 rd1">
+          <div class="en-stripe"></div>
+          <div class="en-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4" />
+              <path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11" />
+            </svg>
+          </div>
+          <div class="en-body">
+            <div class="en-num">60</div>
+            <div class="en-lbl">Questions</div>
+            <div class="en-div"></div>
+            <div class="en-desc">Multiple choice across 5 subject areas. Tests exactly what you studied in B.Com — no
+              surprises, no new topics.</div>
+          </div>
         </div>
-        <div class="en en-dark rd2">
-          <div class="en-num">90</div>
-          <div class="en-lbl">Minutes</div>
-          <div class="en-desc">Continuous online assessment. ~90 seconds per question.</div>
+
+        <div class="en en-c2 rd2">
+          <div class="en-stripe"></div>
+          <div class="en-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
+          </div>
+          <div class="en-body">
+            <div class="en-num">90</div>
+            <div class="en-lbl">Minutes</div>
+            <div class="en-div"></div>
+            <div class="en-desc">Continuous online assessment. About 90 seconds per question — a steady, manageable
+              pace.</div>
+          </div>
         </div>
-        <div class="en en-dark rd3">
-          <div class="en-num">0</div>
-          <div class="en-lbl">Negative marking</div>
-          <div class="en-desc">No penalty for wrong answers. Attempt every single question — never leave a blank.</div>
+
+        <div class="en en-c3 rd3">
+          <div class="en-stripe"></div>
+          <div class="en-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+            </svg>
+          </div>
+          <div class="en-body">
+            <div class="en-num">0</div>
+            <div class="en-lbl">Negative marking</div>
+            <div class="en-div"></div>
+            <div class="en-desc">No penalty for wrong answers. Attempt every single question — never leave a blank.
+            </div>
+          </div>
         </div>
-        <div class="en en-light rd4">
-          <div class="en-num">1.25</div>
-          <div class="en-lbl">Max score / question</div>
-          <div class="en-desc">Variable scoring from 0.75 to 1.25 per question based on difficulty.</div>
+
+        <div class="en en-c4 rd4">
+          <div class="en-stripe"></div>
+          <div class="en-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+          </div>
+          <div class="en-body">
+            <div class="en-num">1.25</div>
+            <div class="en-lbl">Max score / question</div>
+            <div class="en-div"></div>
+            <div class="en-desc">Variable scoring from 0.75 to 1.25 per question — harder questions earn you more marks.
+            </div>
+          </div>
         </div>
+
       </div>
 
-      <!-- 2 dark feature cards -->
+      <!-- 2 dark feature cards with SVG icons -->
       <div class="exam-feats reveal">
         <div class="ef">
-          <div class="ef-ico">🖥️</div>
+          <div class="ef-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="2" y="3" width="20" height="14" rx="2" />
+              <line x1="8" y1="21" x2="16" y2="21" />
+              <line x1="12" y1="17" x2="12" y2="21" />
+            </svg>
+          </div>
           <div>
             <h4>Take it from anywhere in India</h4>
             <p>Fully online from your laptop or desktop with a webcam and stable internet. No travel required for the
@@ -2413,7 +3323,12 @@
           </div>
         </div>
         <div class="ef">
-          <div class="ef-ico">🔒</div>
+          <div class="ef-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
           <div>
             <h4>AI-enabled · Live human supervised</h4>
             <p>Conducted on a secure platform with AI monitoring and live human proctors throughout — fair,
@@ -2423,7 +3338,7 @@
       </div>
 
       <!-- Syllabus -->
-      <div class="syl-box reveal">
+      <div class="syl-box">
         <div class="syl-hdr">
           <div class="syl-hdr-t">Syllabus &amp; Weightage</div>
           <div class="syl-hdr-s">5 sections · 60 questions</div>
@@ -2432,34 +3347,34 @@
           <div class="si-top"><span class="si-n">Accounting &amp; Finance Fundamentals</span><span
               class="si-p">30%</span></div>
           <div class="si-track">
-            <div class="si-fill" data-w="30" style="width:0%"></div>
+            <div class="si-fill" data-w="30"></div>
           </div>
         </div>
         <div class="si">
           <div class="si-top"><span class="si-n">English &amp; Business Communication</span><span
               class="si-p">30%</span></div>
           <div class="si-track">
-            <div class="si-fill" data-w="30" style="width:0%"></div>
+            <div class="si-fill" data-w="30"></div>
           </div>
         </div>
         <div class="si">
           <div class="si-top"><span class="si-n">Auditing &amp; Analytical Reasoning</span><span class="si-p">20%</span>
           </div>
           <div class="si-track">
-            <div class="si-fill" data-w="20" style="width:0%"></div>
+            <div class="si-fill" data-w="20"></div>
           </div>
         </div>
         <div class="si">
           <div class="si-top"><span class="si-n">Quantitative Aptitude</span><span class="si-p">10%</span></div>
           <div class="si-track">
-            <div class="si-fill" data-w="10" style="width:0%"></div>
+            <div class="si-fill" data-w="10"></div>
           </div>
         </div>
         <div class="si">
           <div class="si-top"><span class="si-n">Business &amp; Economic Awareness</span><span class="si-p">10%</span>
           </div>
           <div class="si-track">
-            <div class="si-fill" data-w="10" style="width:0%"></div>
+            <div class="si-fill" data-w="10"></div>
           </div>
         </div>
       </div>
@@ -2467,57 +3382,41 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════
-     ELIGIBILITY — purple banner + card grid
+     ELIGIBILITY — compact
 ══════════════════════════════════════════════════════ -->
   <section class="sec sec-alt">
     <div class="w">
       <div class="sec-lbl">Eligibility</div>
       <h2 class="sec-h">Who can register for NFET?</h2>
 
-      <div class="elig-hero mt3 reveal">
-        <div class="elig-hero-icon">🎯</div>
-        <div class="elig-hero-text">
-          <h3>Meet all 4 criteria?<br>You can register right now.</h3>
-          <p>NFET is open to B.Com first-division graduates across every state in India. No entrance coaching required —
-            the syllabus is what you already studied.</p>
-        </div>
-      </div>
-
-      <div class="elig-cards reveal">
-        <div class="ec rd1">
-          <div class="ec-ico">🎓</div>
-          <div class="ec-body">
-            <h4>B.Com First Division</h4>
-            <p>Also open to B.Com + M.Com, MBA, or other PG qualifications</p>
+      <div class="elig-compact mt3 reveal">
+        <div class="ec-compact rd1">
+          <div class="ec-compact-ico">🎓</div>
+          <div>
+            <div class="ec-compact-title">B.Com First Division</div>
+            <div class="ec-compact-sub">Also B.Com + M.Com / MBA / PG</div>
           </div>
         </div>
-        <div class="ec rd2">
-          <div class="ec-ico">🇮🇳</div>
-          <div class="ec-body">
-            <h4>Indian Citizen</h4>
-            <p>Open to candidates across all states and union territories</p>
+        <div class="ec-compact rd2">
+          <div class="ec-compact-ico">🇮🇳</div>
+          <div>
+            <div class="ec-compact-title">Indian Citizen</div>
+            <div class="ec-compact-sub">All states &amp; union territories</div>
           </div>
         </div>
-        <div class="ec rd3">
-          <div class="ec-ico">📅</div>
-          <div class="ec-body">
-            <h4>Born after Jan 1, 1996</h4>
-            <p>Age eligibility verified at the time of your exam date</p>
-          </div>
-        </div>
-        <div class="ec rd4">
-          <div class="ec-ico">💻</div>
-          <div class="ec-body">
-            <h4>Laptop + Webcam + Internet</h4>
-            <p>Required to appear for the online proctored exam from home</p>
+        <div class="ec-compact rd3">
+          <div class="ec-compact-ico">📅</div>
+          <div>
+            <div class="ec-compact-title">Born after Jan 1, 1996</div>
+            <div class="ec-compact-sub">Age verified at exam date</div>
           </div>
         </div>
       </div>
 
-      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+      <div style="margin-top:24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap">
         <button onclick="goToForm()"
-          style="background:var(--or);color:#fff;font-size:.93rem;font-weight:700;padding:14px 30px;border-radius:100px;letter-spacing:.04em;box-shadow:var(--sh-o);display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;font-family:var(--f);transition:all .25s">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          style="background:var(--or);color:#fff;font-size:.92rem;font-weight:700;padding:13px 28px;border-radius:100px;letter-spacing:.04em;box-shadow:var(--sh-o);display:inline-flex;align-items:center;gap:8px;cursor:pointer;border:none;font-family:var(--f);transition:all .25s">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M12 2L2 7l10 5 10-5-10-5z" />
             <path d="M2 17l10 5 10-5" />
             <path d="M2 12l10 5 10-5" />
@@ -2533,44 +3432,44 @@
   <section class="sec sec-dp">
     <div class="w">
       <div class="sec-lbl sec-lbl-l">Why trust this</div>
-      <h2 class="sec-h sec-h-l">Backed by real credentials</h2>
-      <p class="sec-p sec-p-l">Every element of GCC School is independently verifiable.</p>
+      <h2 class="sec-h sec-h-l">Backed by institutions you can verify</h2>
+      <p class="sec-p sec-p-l">Every element of GCC School is real, documented, and independently verifiable.</p>
       <div class="cred-grid mt4">
         <div class="cc reveal rd1">
           <div class="cc-ico">🏢</div>
-          <h4>Campus in Gurugram</h4>
-          <p>Inside one of India's most prestigious commercial districts — the same address as the global companies that
-            hire through this process.</p>
+          <h4>DLF Cybercity Campus, Gurugram</h4>
+          <p>GCC School's campus is at DLF Cybercity — India's most recognised commercial district and home to the
+            world's leading consulting firms, global banks, and MNCs. The same address as the companies hiring you.</p>
         </div>
         <div class="cc reveal rd2">
-          <div class="cc-ico">🌐</div>
-          <h4>UK ACCA Qualification</h4>
-          <p>A UK-accredited professional accounting credential. The standard held by senior finance professionals at
-            the world's top firms globally.</p>
+          <div class="cc-ico">✅</div>
+          <h4>AON — Testing Partner</h4>
+          <p>NFET is powered by AON, a Fortune 500 global professional services firm trusted by thousands of
+            multinationals for talent assessment and benchmarking worldwide.</p>
         </div>
         <div class="cc reveal rd3">
           <div class="cc-ico">🤝</div>
           <h4>Real Hiring Partners</h4>
-          <p>World's top consulting firms, global banks, and international MNCs participate in GCC School's interview
-            process. Formal offers before training.</p>
+          <p>The world's top consulting firms, global banks, and MNCs attend GCC School's hiring process and make formal
+            employment offers. Verified by the companies that show up.</p>
         </div>
         <div class="cc reveal rd1">
-          <div class="cc-ico">🎗</div>
-          <h4>British Council Kit</h4>
-          <p>Meritorious NFET candidates receive the British Council Communication Evaluation Kit — an internationally
-            recognised credential.</p>
+          <div class="cc-ico">📋</div>
+          <h4>AICTE Approved — PGCM</h4>
+          <p>The Post Graduate Certificate in Management is awarded by AIMA and approved by AICTE — the All India
+            Council for Technical Education. A government-recognised credential.</p>
         </div>
         <div class="cc reveal rd2">
           <div class="cc-ico">✈️</div>
           <h4>All Expenses Paid*</h4>
-          <p>Eligible achievers receive 100% travel reimbursement to Gurugram for job interviews. No financial barrier
-            for those who earn it.</p>
+          <p>Eligible NFET achievers receive 100% travel reimbursement to Gurugram for job interviews. Top performers
+            face no financial barrier to the opportunity.</p>
         </div>
         <div class="cc reveal rd3">
-          <div class="cc-ico">🔒</div>
-          <h4>Secure Online Exam</h4>
-          <p>AI-enabled with live human supervision ensuring a fair, professional, and transparent assessment for every
-            candidate.</p>
+          <div class="cc-ico">💰</div>
+          <h4>Financing Available</h4>
+          <p>Education loans available through HDFC Credila — so the programme fee is never a barrier to entry for
+            eligible candidates.</p>
         </div>
       </div>
       <p style="margin-top:20px;font-size:.67rem;color:rgba(255,255,255,.24);text-align:center">* Travel reimbursement
@@ -2578,46 +3477,214 @@
     </div>
   </section>
 
-  <!-- ── VOICES ─────────────────────────────────────────── -->
+  <!-- ── INDUSTRY FACTS ─────────────────────────────────── -->
   <section class="sec sec-alt">
     <div class="w">
-      <div class="sec-lbl">Voices from GCC careers</div>
-      <h2 class="sec-h">From those already there</h2>
+      <div class="sec-lbl">The GCC Opportunity</div>
+      <h2 class="sec-h">Why this is the right time<br>to be a B.Com graduate in India</h2>
+      <p class="sec-p">The Global Capability Centre sector in India is one of the fastest-growing employers of finance
+        and accounting professionals. These are verified figures from industry reports.</p>
       <div class="vgrid mt4 reveal">
         <div class="vc">
-          <div class="vq">"</div>
-          <p class="vt">I work in the finance division of one of the world's top consulting firms in Gurugram. The work
-            is real, high-level, and global. GCC School is the pipeline B.Com graduates needed and didn't have before.
-          </p>
-          <div class="vn">Senior Finance Professional</div>
-          <div class="vr">GCC, Top Global Consulting Firm · Gurugram</div>
+          <div class="vq" style="color:var(--pp);font-size:2rem">📊</div>
+          <p class="vt" style="font-style:normal;font-weight:500;color:var(--dp);font-size:.95rem;margin-bottom:8px">
+            1,700+ GCCs operating in India</p>
+          <p class="vt">India is home to over 1,700 Global Capability Centres as of 2024, employing more than 1.9
+            million professionals. Finance and accounting functions account for a significant and growing share of GCC
+            roles.</p>
+          <div class="vn">Source</div>
+          <div class="vr">NASSCOM GCC India Report, 2024</div>
         </div>
         <div class="vc">
-          <div class="vq">"</div>
-          <p class="vt">When I attend GCC School's job interviews, the candidates are genuinely different. They've
-            cleared a national exam. The conversation is at a professional level from minute one. That's rare in B.Com
-            recruitment.</p>
-          <div class="vn">Finance Hiring Manager</div>
-          <div class="vr">Global MNC GCC · India</div>
+          <div class="vq" style="color:var(--pp);font-size:2rem">📈</div>
+          <p class="vt" style="font-style:normal;font-weight:500;color:var(--dp);font-size:.95rem;margin-bottom:8px">GCC
+            sector growing at 11% annually</p>
+          <p class="vt">The GCC sector in India is projected to reach $100 billion by 2030, growing at 11% CAGR. This
+            expansion is creating a sustained, long-term shortage of qualified finance professionals — particularly
+            those holding globally recognised credentials.</p>
+          <div class="vn">Source</div>
+          <div class="vr">Deloitte — India GCC Landscape Report, 2024</div>
         </div>
         <div class="vc">
-          <div class="vq">"</div>
-          <p class="vt">The mock test made the exam feel completely familiar. I walked out of the interviews with an
-            offer the same day. The prep kit was genuinely useful — especially the audit and reasoning section I was
-            worried about.</p>
-          <div class="vn">NFET Graduate</div>
-          <div class="vr">GCC School · Now at a top global finance firm</div>
+          <div class="vq" style="color:var(--pp);font-size:2rem">🎓</div>
+          <p class="vt" style="font-style:normal;font-weight:500;color:var(--dp);font-size:.95rem;margin-bottom:8px">
+            ACCA members earn significantly more</p>
+          <p class="vt">According to ACCA's Global Salary Survey, ACCA-qualified professionals consistently command
+            salary premiums of 20–50% over peers without the qualification — across audit, tax, and financial management
+            roles at multinational firms.</p>
+          <div class="vn">Source</div>
+          <div class="vr">ACCA Global Salary and Career Survey</div>
         </div>
         <div class="vc">
-          <div class="vq">"</div>
-          <p class="vt">Year one difference between me and my B.Com classmates: ₹7 lakh. The decision to register took 5
-            minutes. What it delivered changed the entire trajectory of my career.</p>
-          <div class="vn">B.Com Graduate, NFET Alumna</div>
-          <div class="vr">GCC School · UK ACCA in progress</div>
+          <div class="vq" style="color:var(--pp);font-size:2rem">💼</div>
+          <p class="vt" style="font-style:normal;font-weight:500;color:var(--dp);font-size:.95rem;margin-bottom:8px">
+            B.Com graduates most under-placed in India</p>
+          <p class="vt">Despite producing over 700,000 B.Com graduates annually, India's commerce graduates have among
+            the lowest average starting salaries of any degree cohort. The structural gap between talent quality and
+            placement quality is what GCC School was built to close.</p>
+          <div class="vn">Source</div>
+          <div class="vr">All India Survey on Higher Education (AISHE), Ministry of Education</div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- ══════════════════════════════════════════════════════
+     FACULTY / EXPERTS
+══════════════════════════════════════════════════════ -->
+  <section class="sec sec-alt">
+    <div class="w">
+      <div class="sec-lbl">Faculty</div>
+      <h2 class="sec-h">Our eminent subject matter experts</h2>
+      <p class="sec-p">89.5% of students believe in our teaching methodology. Our faculty brings 15–25+ years of
+        industry experience from the world's top firms.</p>
+      <div class="experts-grid mt4 reveal">
+
+        <div class="expert-card">
+          <div class="expert-avatar">NK</div>
+          <div class="expert-exp">15+ Yrs</div>
+          <div class="expert-name">CPA Nitish Khatri</div>
+          <div class="expert-title">AVP, KC GlobEd</div>
+          <div class="expert-org">Accenture · Genpact</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">BG</div>
+          <div class="expert-exp">20+ Yrs</div>
+          <div class="expert-name">CPA & CA Bhawna Goswami</div>
+          <div class="expert-title">Faculty, ICAI</div>
+          <div class="expert-org">AICPA</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">KB</div>
+          <div class="expert-exp">25+ Yrs</div>
+          <div class="expert-name">CA Kapileshwar Bhalla</div>
+          <div class="expert-title">Author & Trainer</div>
+          <div class="expert-org">IFRS · Ind AS · ACCA</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">AT</div>
+          <div class="expert-exp">15+ Yrs</div>
+          <div class="expert-name">CA Anish Thomas</div>
+          <div class="expert-title">Academic Head, Finprov</div>
+          <div class="expert-org">EY · Deloitte</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">RY</div>
+          <div class="expert-exp">15+ Yrs</div>
+          <div class="expert-name">EA Ravi Yathiraj</div>
+          <div class="expert-title">Practising Enrolled Agent</div>
+          <div class="expert-org">HDFC Life · MaxLife</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">SC</div>
+          <div class="expert-exp">15+ Yrs</div>
+          <div class="expert-name">Santhosh Chandrashekar</div>
+          <div class="expert-title">Senior Manager</div>
+          <div class="expert-org">KPMG · EY</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">VA</div>
+          <div class="expert-exp">20+ Yrs</div>
+          <div class="expert-name">CPA & CA Vinay Aggarwal</div>
+          <div class="expert-title">Partner, Vinay Aggarwal & Associates</div>
+          <div class="expert-org">Goldman · Barclays</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">RS</div>
+          <div class="expert-exp">20+ Yrs</div>
+          <div class="expert-name">CA Ram Sachdeva</div>
+          <div class="expert-title">Manager</div>
+          <div class="expert-org">EY · Deloitte</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">MA</div>
+          <div class="expert-exp">20+ Yrs</div>
+          <div class="expert-name">CA Manpreet Ahuja</div>
+          <div class="expert-title">Senior Manager</div>
+          <div class="expert-org">KPMG</div>
+        </div>
+
+        <div class="expert-card">
+          <div class="expert-avatar">IS</div>
+          <div class="expert-exp">20+ Yrs</div>
+          <div class="expert-name">Inderpal Singh</div>
+          <div class="expert-title">CEO & Co-Founder, 4x4 Advisory</div>
+          <div class="expert-org">4x4 Advisory · EY</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════
+     PARTNERS
+══════════════════════════════════════════════════════ -->
+  <section class="partners-section">
+    <div class="w">
+      <div class="sec-lbl">Our Partners</div>
+      <h2 class="sec-h">Our Partners</h2>
+
+      <div class="partner-group mt4">
+        <div class="partner-group-title">Knowledge Partners</div>
+        <div class="partner-logos">
+          <div class="partner-pill">
+            <div class="partner-pill-ico">🎓</div>
+            <div class="partner-pill-text">ACCA — Silver Learning Partner<small>International Certification Body</small>
+            </div>
+          </div>
+          <div class="partner-pill">
+            <div class="partner-pill-ico">🌐</div>
+            <div class="partner-pill-text">KC GlobEd<small>Subject Matter Expert</small></div>
+          </div>
+          <div class="partner-pill">
+            <div class="partner-pill-ico">🔴</div>
+            <div class="partner-pill-text">British Council<small>Global English Academy</small></div>
+          </div>
+          <div class="partner-pill">
+            <div class="partner-pill-ico">📋</div>
+            <div class="partner-pill-text">AIMA<small>AICTE Approved PGCM Certifying Body</small></div>
+          </div>
+          <div class="partner-pill">
+            <div class="partner-pill-ico">🎓</div>
+            <div class="partner-pill-text">University of London<small>Conferring University</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-group">
+        <div class="partner-group-title">Testing &amp; Technical Partners</div>
+        <div class="partner-logos">
+          <div class="partner-pill">
+            <div class="partner-pill-ico">✅</div>
+            <div class="partner-pill-text">AON<small>Testing Partner</small></div>
+          </div>
+          <div class="partner-pill">
+            <div class="partner-pill-ico">⚙️</div>
+            <div class="partner-pill-text">Meritto<small>Technical Support Partner</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="partner-group">
+        <div class="partner-group-title">Financing Partners</div>
+        <div class="partner-logos">
+          <div class="partner-pill">
+            <div class="partner-pill-ico">🏦</div>
+            <div class="partner-pill-text">HDFC Credila<small>Education Loan Specialist</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ── FAQ ────────────────────────────────────────────── -->
   <section class="sec">

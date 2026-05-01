@@ -2756,6 +2756,170 @@
         width: 10%
       }
     }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      background: var(--wh);
+      border-radius: 20px;
+      padding: 36px 30px 28px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      animation: popIn .3s ease;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      background: var(--wh);
+      border-radius: 20px;
+      padding: 36px 30px 28px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      animation: popIn .3s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .popup-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dp), var(--or));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 1.3rem;
+      color: var(--t3);
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .popup-close:hover {
+      color: var(--dp);
+    }
+
+    .popup-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dp);
+      margin-bottom: 4px;
+    }
+
+    .popup-sub {
+      font-size: .78rem;
+      color: var(--t3);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .pp-field {
+      margin-bottom: 13px;
+    }
+
+    .pp-label {
+      display: block;
+      font-size: .71rem;
+      font-weight: 600;
+      color: var(--t2);
+      margin-bottom: 4px;
+      letter-spacing: .02em;
+    }
+
+    .pp-input {
+      width: 100%;
+      background: var(--off);
+      border: 1.5px solid var(--bdr);
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-size: .88rem;
+      color: var(--t1);
+      font-family: var(--f);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .pp-input:focus {
+      border-color: var(--mp);
+      box-shadow: 0 0 0 3px rgba(122, 40, 153, .1);
+    }
+
+    .pp-input::placeholder {
+      color: var(--t3);
+    }
+
+    .pp-btn {
+      width: 100%;
+      background: var(--or);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 14px 20px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .pp-btn:hover {
+      background: var(--ord);
+      transform: translateY(-1px);
+    }
   </style>
 </head>
 
@@ -3764,14 +3928,14 @@
       </div>
       <div class="final-price">Registration: <strong>₹249</strong></div>
       <div class="final-note">Registration closes May 15, 2026</div>
-      <div><a href="/nfet-brochure.pdf" class="broch" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24"
+      <div><a href="#" class="broch" onclick="openPopup();return false;"><svg width="11" height="11" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
             <polyline points="14 2 14 8 20 8" />
             <line x1="12" y1="18" x2="12" y2="12" />
             <line x1="9" y1="15" x2="15" y2="15" />
           </svg>Download NFET brochure (PDF)</a></div>
-    </div>
+
   </section>
 
   <!-- ── FOOTER ─────────────────────────────────────────── -->
@@ -4022,6 +4186,36 @@
       cursor: pointer;
     }
   </style>
+
+  <div class="popup-overlay" id="brochure-popup">
+    <div class="popup-box">
+      <span class="popup-close" onclick="closePopup()">&#x2715;</span>
+      <div class="popup-title">Download NFET Brochure</div>
+      <div class="popup-sub">Enter your details and we'll send the brochure directly to your email.</div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-name">Full Name</label>
+        <input class="pp-input" id="pp-name" type="text" placeholder="Your full name">
+      </div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-phone">Mobile Number</label>
+        <input class="pp-input" id="pp-phone" type="tel" placeholder="10-digit mobile number">
+      </div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-email">Email Address</label>
+        <input class="pp-input" id="pp-email" type="email" placeholder="your@email.com">
+      </div>
+      <button class="pp-btn" onclick="submitBrochure()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="12" y1="18" x2="12" y2="12" />
+          <line x1="9" y1="15" x2="15" y2="15" />
+        </svg>
+        Download Brochure
+      </button>
+    </div>
+  </div>
+
   <div id="statusModalOverlay" class="status-overlay">
     <div class="status-modal">
       <div class="status-close-btn" onclick="closeStatusModal()">✕</div>

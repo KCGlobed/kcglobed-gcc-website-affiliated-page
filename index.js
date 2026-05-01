@@ -592,3 +592,28 @@ function setupAbandonmentTracking() {
   if (stateEl) stateEl.addEventListener("change", checkAndSend);
   if (degreeEl) degreeEl.addEventListener("change", checkAndSend);
 }
+
+function openPopup() {
+  document.getElementById('brochure-popup').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('brochure-popup').classList.remove('active');
+  document.body.style.overflow = '';
+}
+document.getElementById('brochure-popup').addEventListener('click', function (e) {
+  if (e.target === this) closePopup();
+});
+document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
+
+function submitBrochure() {
+  const n = document.getElementById('pp-name').value.trim();
+  const p = document.getElementById('pp-phone').value.trim();
+  const em = document.getElementById('pp-email').value.trim();
+  if (!n || !p || !em) { alert('Please fill in all fields.'); return; }
+  // Wire to your CRM / email system here
+  // e.g. fetch('/api/brochure-request', {method:'POST', body:JSON.stringify({name:n,phone:p,email:em})})
+  closePopup();
+  // Then trigger actual PDF download:
+  const a = document.createElement('a'); a.href = '/nfet-brochure.pdf'; a.download = 'NFET_Brochure_2026.pdf'; a.click();
+}

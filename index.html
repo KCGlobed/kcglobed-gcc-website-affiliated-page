@@ -4816,6 +4816,30 @@
         Again</button>
     </div>
   </div>
+  <div id="brochure-popup" class="status-overlay">
+    <div class="status-modal" style="text-align: left;">
+      <div class="status-close-btn" onclick="closePopup()">✕</div>
+      <h3 style="margin-bottom: 8px; color: var(--dp);">Get the Brochure</h3>
+      <p style="margin-bottom: 24px; font-size: 0.85rem; color: var(--t3);">Enter your details to receive the NFET Dossier immediately.</p>
+      
+      <div class="lf-field">
+        <label class="lf-label">Full Name*</label>
+        <input class="lf-input" id="pp-name" type="text" placeholder="Your full name">
+      </div>
+      <div class="lf-field">
+        <label class="lf-label">Mobile Number*</label>
+        <input class="lf-input" id="pp-phone" type="tel" placeholder="10-digit mobile number">
+      </div>
+      <div class="lf-field">
+        <label class="lf-label">Email Address*</label>
+        <input class="lf-input" id="pp-email" type="email" placeholder="your@email.com">
+      </div>
+      
+      <button class="lf-btn" onclick="submitBrochure()" style="margin-top: 16px;">
+        Download Dossier
+      </button>
+    </div>
+  </div>
   <script src="university-data.js"></script>
   <script src="index.js"></script>
 </body>

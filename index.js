@@ -601,19 +601,66 @@ function closePopup() {
   document.getElementById('brochure-popup').classList.remove('active');
   document.body.style.overflow = '';
 }
-document.getElementById('brochure-popup').addEventListener('click', function (e) {
-  if (e.target === this) closePopup();
-});
-document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closePopup(); });
 
-function submitBrochure() {
+async function submitBrochure() {
   const n = document.getElementById('pp-name').value.trim();
   const p = document.getElementById('pp-phone').value.trim();
   const em = document.getElementById('pp-email').value.trim();
-  if (!n || !p || !em) { alert('Please fill in all fields.'); return; }
-  // Wire to your CRM / email system here
-  // e.g. fetch('/api/brochure-request', {method:'POST', body:JSON.stringify({name:n,phone:p,email:em})})
+
+  if (!n || !p || !em) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Basic validation
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email.'); return; }
+  if (!/^[6-9]\d{9}$/.test(p)) { alert('Please enter a valid 10-digit mobile number.'); return; }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const utm_campaign = urlParams.get("utm_campaign") || "";
+  const utm_medium = urlParams.get("utm_medium") || "";
+  const utm_source = urlParams.get("utm_source") || "";
+
+  // Show loading state on button
+  const btn = document.querySelector('#brochure-popup .lf-btn');
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Processing...';
+
+  try {
+    const response = await fetch(GCC_BACKEND_URL + "/api/career/createabondantform", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        full_name: n,
+        email: em,
+        phone: p,
+        source: 6,
+        source_form: 1,
+        utm_source: utm_source,
+        utm_medium: utm_medium,
+        utm_campaign: utm_campaign
+      }),
+    });
+    const result = await response.json();
+    console.log("Brochure lead captured:", result);
+  } catch (e) {
+    console.error("Error capturing brochure lead:", e);
+  }
+
+  btn.innerHTML = originalText;
+  btn.disabled = false;
+  
   closePopup();
-  // Then trigger actual PDF download:
-  const a = document.createElement('a'); a.href = '/nfet-brochure.pdf'; a.download = 'NFET_Brochure_2026.pdf'; a.click();
+
+  // Trigger PDF download
+  const pdfUrl = "https://storage.googleapis.com/gcc_prod_static_files_backend/static/files/GCC%20SCHOOL%20Dossier.pdf";
+  const a = document.createElement('a');
+  a.href = pdfUrl;
+  a.download = 'GCC_SCHOOL_Dossier.pdf';
+  a.target = "_blank";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
 }
+

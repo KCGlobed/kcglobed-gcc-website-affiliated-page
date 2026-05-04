@@ -2764,6 +2764,635 @@
         width: 10%
       }
     }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      background: var(--wh);
+      border-radius: 20px;
+      padding: 36px 30px 28px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      animation: popIn .3s ease;
+    }
+
+    .popup-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, .55);
+      backdrop-filter: blur(4px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .popup-overlay.active {
+      display: flex;
+    }
+
+    .popup-box {
+      background: var(--wh);
+      border-radius: 20px;
+      padding: 36px 30px 28px;
+      max-width: 420px;
+      width: 100%;
+      position: relative;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, .3);
+      animation: popIn .3s ease;
+    }
+
+    @keyframes popIn {
+      from {
+        opacity: 0;
+        transform: scale(.92)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .popup-box::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dp), var(--or));
+      border-radius: 20px 20px 0 0;
+    }
+
+    .popup-close {
+      position: absolute;
+      top: 14px;
+      right: 16px;
+      font-size: 1.3rem;
+      color: var(--t3);
+      cursor: pointer;
+      line-height: 1;
+      transition: color .2s;
+    }
+
+    .popup-close:hover {
+      color: var(--dp);
+    }
+
+    .popup-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--dp);
+      margin-bottom: 4px;
+    }
+
+    .popup-sub {
+      font-size: .78rem;
+      color: var(--t3);
+      margin-bottom: 22px;
+      line-height: 1.5;
+    }
+
+    .pp-field {
+      margin-bottom: 13px;
+    }
+
+    .pp-label {
+      display: block;
+      font-size: .71rem;
+      font-weight: 600;
+      color: var(--t2);
+      margin-bottom: 4px;
+      letter-spacing: .02em;
+    }
+
+    .pp-input {
+      width: 100%;
+      background: var(--off);
+      border: 1.5px solid var(--bdr);
+      border-radius: 10px;
+      padding: 11px 13px;
+      font-size: .88rem;
+      color: var(--t1);
+      font-family: var(--f);
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .pp-input:focus {
+      border-color: var(--mp);
+      box-shadow: 0 0 0 3px rgba(122, 40, 153, .1);
+    }
+
+    .pp-input::placeholder {
+      color: var(--t3);
+    }
+
+    .pp-btn {
+      width: 100%;
+      background: var(--or);
+      color: #fff;
+      font-size: .95rem;
+      font-weight: 700;
+      padding: 14px 20px;
+      border-radius: 100px;
+      letter-spacing: .04em;
+      transition: all .25s;
+      box-shadow: var(--sh-o);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .pp-btn:hover {
+      background: var(--ord);
+      transform: translateY(-1px);
+    }
+
+    .journey-split {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .journey-steps-col {
+      flex: 1;
+    }
+
+    .journey-img-col {
+      flex: 0 0 340px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    @media(min-width:900px) {
+      .journey-split {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 56px;
+      }
+    }
+
+    @media(max-width:899px) {
+      .journey-img-col {
+        display: none;
+      }
+    }
+
+    .journey-img-card {
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--sh-c);
+    }
+
+    .journey-stat-card {
+      background: var(--wh);
+      border: 1.5px solid var(--bdr);
+      border-radius: 16px;
+      padding: 20px 16px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    .jsc-item {
+      flex: 1;
+      text-align: center;
+    }
+
+    .jsc-val {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--dp);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .jsc-lbl {
+      font-size: .68rem;
+      color: var(--t3);
+      line-height: 1.3;
+    }
+
+    .jsc-div {
+      width: 1px;
+      height: 40px;
+      background: var(--bdr);
+      flex-shrink: 0;
+    }
+
+    .inc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media(min-width:600px) {
+      .inc-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+    }
+
+    @media(min-width:960px) {
+      .inc-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+      }
+    }
+
+    /* Base card */
+    .inc-card {
+      border-radius: 22px;
+      padding: 28px 24px 24px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform .3s cubic-bezier(.22, 1, .36, 1), box-shadow .3s;
+      cursor: default;
+    }
+
+    .inc-card:hover {
+      transform: translateY(-6px);
+    }
+
+    /* Card 1 — UK ACCA: deep purple + gold */
+    .inc-card-1 {
+      background: linear-gradient(145deg, #2A0550 0%, #4A1270 60%, #3A0060 100%);
+      border: 1.5px solid rgba(245, 166, 35, .28);
+      box-shadow: 0 4px 32px rgba(40, 5, 70, .55), inset 0 1px 0 rgba(245, 166, 35, .18);
+    }
+
+    .inc-card-1:hover {
+      box-shadow: 0 14px 52px rgba(40, 5, 70, .65), 0 0 0 1.5px rgba(245, 166, 35, .45);
+    }
+
+    .inc-card-1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #CC7A05, #F5A623, #CC7A05);
+    }
+
+    .inc-card-1::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(204, 122, 5, .2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Card 2 — British Council: indigo + sky blue */
+    .inc-card-2 {
+      background: linear-gradient(145deg, #0E1640 0%, #1C2C6E 60%, #122060 100%);
+      border: 1.5px solid rgba(100, 160, 255, .22);
+      box-shadow: 0 4px 32px rgba(10, 18, 60, .55), inset 0 1px 0 rgba(120, 170, 255, .12);
+    }
+
+    .inc-card-2:hover {
+      box-shadow: 0 14px 52px rgba(10, 18, 60, .65), 0 0 0 1.5px rgba(100, 160, 255, .4);
+    }
+
+    .inc-card-2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #4A80E0, #88B4FF, #4A80E0);
+    }
+
+    .inc-card-2::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(80, 130, 240, .18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Card 3 — PGCM: dark crimson + orange */
+    .inc-card-3 {
+      background: linear-gradient(145deg, #280810 0%, #481020 60%, #360A18 100%);
+      border: 1.5px solid rgba(220, 100, 60, .22);
+      box-shadow: 0 4px 32px rgba(35, 8, 18, .55), inset 0 1px 0 rgba(220, 120, 60, .12);
+    }
+
+    .inc-card-3:hover {
+      box-shadow: 0 14px 52px rgba(35, 8, 18, .65), 0 0 0 1.5px rgba(220, 100, 60, .4);
+    }
+
+    .inc-card-3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #CC4A20, #F07840, #CC4A20);
+    }
+
+    .inc-card-3::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 90, 50, .18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Card 4 — MSc London: dark slate + teal */
+    .inc-card-4 {
+      background: linear-gradient(145deg, #081820 0%, #102A36 60%, #0C2030 100%);
+      border: 1.5px solid rgba(60, 190, 180, .18);
+      box-shadow: 0 4px 32px rgba(6, 16, 24, .55), inset 0 1px 0 rgba(60, 190, 180, .1);
+    }
+
+    .inc-card-4:hover {
+      box-shadow: 0 14px 52px rgba(6, 16, 24, .65), 0 0 0 1.5px rgba(60, 190, 180, .35);
+    }
+
+    .inc-card-4::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #2AABA0, #50CEC5, #2AABA0);
+    }
+
+    .inc-card-4::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(50, 180, 170, .15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Icon */
+    .inc-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inc-card-1 .inc-icon {
+      background: rgba(204, 122, 5, .18);
+      border: 1.5px solid rgba(204, 122, 5, .35);
+    }
+
+    .inc-card-2 .inc-icon {
+      background: rgba(80, 130, 240, .15);
+      border: 1.5px solid rgba(100, 160, 255, .32);
+    }
+
+    .inc-card-3 .inc-icon {
+      background: rgba(200, 90, 50, .15);
+      border: 1.5px solid rgba(220, 100, 60, .32);
+    }
+
+    .inc-card-4 .inc-icon {
+      background: rgba(50, 180, 170, .12);
+      border: 1.5px solid rgba(60, 190, 180, .28);
+    }
+
+    /* Badge */
+    .inc-badge {
+      display: inline-block;
+      font-size: .58rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      align-self: flex-start;
+      margin-bottom: 10px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inc-card-1 .inc-badge {
+      background: rgba(204, 122, 5, .2);
+      color: #F5A623;
+      border: 1px solid rgba(204, 122, 5, .4);
+    }
+
+    .inc-card-2 .inc-badge {
+      background: rgba(80, 130, 240, .18);
+      color: #88B4FF;
+      border: 1px solid rgba(100, 160, 255, .38);
+    }
+
+    .inc-card-3 .inc-badge {
+      background: rgba(200, 90, 50, .18);
+      color: #F09070;
+      border: 1px solid rgba(220, 100, 60, .38);
+    }
+
+    .inc-card-4 .inc-badge {
+      background: rgba(50, 180, 170, .12);
+      color: #50CEC5;
+      border: 1px solid rgba(60, 190, 180, .3);
+    }
+
+    /* Title */
+    .inc-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* By line */
+    .inc-by {
+      font-size: .69rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inc-card-1 .inc-by {
+      color: rgba(245, 166, 35, .65);
+    }
+
+    .inc-card-2 .inc-by {
+      color: rgba(136, 180, 255, .6);
+    }
+
+    .inc-card-3 .inc-by {
+      color: rgba(240, 144, 112, .6);
+    }
+
+    .inc-card-4 .inc-by {
+      color: rgba(80, 206, 197, .55);
+    }
+
+    /* Divider */
+    .inc-sep {
+      height: 1px;
+      margin: 0 0 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inc-card-1 .inc-sep {
+      background: rgba(245, 166, 35, .18);
+    }
+
+    .inc-card-2 .inc-sep {
+      background: rgba(100, 160, 255, .18);
+    }
+
+    .inc-card-3 .inc-sep {
+      background: rgba(220, 100, 60, .18);
+    }
+
+    .inc-card-4 .inc-sep {
+      background: rgba(60, 190, 180, .15);
+    }
+
+    /* Big stat */
+    .inc-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .inc-stat-num {
+      font-size: 1.9rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .inc-card-1 .inc-stat-num {
+      color: #F5A623;
+    }
+
+    .inc-card-2 .inc-stat-num {
+      color: #88B4FF;
+    }
+
+    .inc-card-3 .inc-stat-num {
+      color: #F09070;
+    }
+
+    .inc-card-4 .inc-stat-num {
+      color: #50CEC5;
+    }
+
+    .inc-stat-label {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .45);
+      line-height: 1.3;
+    }
+
+    /* Description */
+    .inc-desc {
+      font-size: .78rem;
+      line-height: 1.65;
+      color: rgba(255, 255, 255, .6);
+      margin-bottom: 16px;
+      flex: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Tags */
+    /* .inc-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: auto;
+      position: relative;
+      z-index: 1;
+    } */
+
+    /* .inc-tag {
+      font-size: .63rem;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 100px;
+      white-space: nowrap;
+    } */
+
+    .inc-card-1 .inc-tag {
+      background: rgba(204, 122, 5, .15);
+      border: 1px solid rgba(204, 122, 5, .32);
+      color: rgba(245, 166, 35, .88);
+    }
+
+    .inc-card-2 .inc-tag {
+      background: rgba(80, 130, 240, .12);
+      border: 1px solid rgba(100, 160, 255, .28);
+      color: rgba(136, 180, 255, .88);
+    }
+
+    .inc-card-3 .inc-tag {
+      background: rgba(200, 90, 50, .13);
+      border: 1px solid rgba(220, 100, 60, .28);
+      color: rgba(240, 144, 112, .9);
+    }
+
+    .inc-card-4 .inc-tag {
+      background: rgba(50, 180, 170, .1);
+      border: 1px solid rgba(60, 190, 180, .26);
+      color: rgba(80, 206, 197, .9);
+    }
   </style>
 </head>
 
@@ -3160,59 +3789,169 @@
     <div class="w">
       <div class="sec-lbl">What happens next</div>
       <h2 class="sec-h">From NFET to ₹10 LPA — your exact path</h2>
-      <div class="journey mt4 reveal">
-        <div class="jline"></div>
-        <div class="step act">
-          <div class="sno">1</div>
-          <div class="sbody">
-            <div class="stag stag-p">You are here</div>
-            <h3>Register — receive your prep kit immediately</h3>
-            <p>Complete registration. Choose your exam slot. Your Prep Starter Kit, Mock Test access, and Admit Card
-              arrive within 24 hours.</p>
+      <div class="journey-split mt4 reveal">
+        <!-- Steps column -->
+        <div class="journey-steps-col">
+          <div class="journey">
+            <div class="jline"></div>
+            <div class="step act">
+              <div class="sno">1</div>
+              <div class="sbody">
+                <div class="stag stag-p">You are here</div>
+                <h3>Register — receive your prep kit immediately</h3>
+                <p>Complete registration. Choose your exam slot. Your Prep Starter Kit, Mock Test access, and Admit Card
+                  arrive within 24 hours.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="sno">2</div>
+              <div class="sbody">
+                <h3>Take NFET — online, from anywhere in India</h3>
+                <p>60 questions. 90 minutes. From your laptop at home. No negative marking — attempt every question.
+                  AI-enabled with live human supervision.</p>
+              </div>
+            </div>
+            <div class="step hl">
+              <div class="sno">3</div>
+              <div class="sbody">
+                <div class="stag stag-o">Job Interviews — Gurugram*</div>
+                <h3>Invitation to meet the world's top company recruiters</h3>
+                <p>Top NFET performers are invited to job interviews in Gurugram. Recruiting teams from the world's
+                  leading consulting firms, global banks, and MNCs interview merit-verified candidates — not anonymous
+                  CVs.</p>
+                <p class="sfn">* All expenses paid for eligible achievers</p>
+              </div>
+            </div>
+            <div class="step hl">
+              <div class="sno">4</div>
+              <div class="sbody">
+                <div class="stag stag-o">The hire-first model</div>
+                <h3>Employment offer — ₹10 LPA before training starts</h3>
+                <p>Selected candidates receive a confirmed employment offer at ₹10 LPA before the 12-month training
+                  program begins. The job is confirmed first. Training follows.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="sno">5</div>
+              <div class="sbody">
+                <h3>12-month AEIAP — UK ACCA qualification</h3>
+                <p>Train at GCC School's campus on the program leading to the UK ACCA — the professional accounting
+                  credential held by finance professionals at the world's top firms — while your employment is already
+                  confirmed.</p>
+              </div>
+            </div>
+            <div class="step" style="padding-bottom:0">
+              <div class="sno">6</div>
+              <div class="sbody">
+                <h3>Join your employer — globally qualified and ready</h3>
+                <p>Begin your career at a top global company. Offer confirmed in step 4. Qualification earned in step 5.
+                  Career starts in step 6.</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="step">
-          <div class="sno">2</div>
-          <div class="sbody">
-            <h3>Take NFET — online, from anywhere in India</h3>
-            <p>60 questions. 90 minutes. From your laptop at home. No negative marking — attempt every question.
-              AI-enabled with live human supervision.</p>
+        <!-- Image column — desktop only -->
+        <div class="journey-img-col">
+          <div class="journey-img-card">
+            <svg viewBox="0 0 380 480" xmlns="http://www.w3.org/2000/svg"
+              style="width:100%;height:auto;display:block;border-radius:18px">
+              <!-- Background -->
+              <rect width="380" height="480" fill="#F3EAF9" rx="18" />
+              <!-- Desk surface -->
+              <rect x="40" y="300" width="300" height="12" rx="6" fill="#D4B8E3" />
+              <rect x="20" y="310" width="340" height="140" rx="0" fill="#E8D5F5" />
+              <!-- Monitor stand -->
+              <rect x="175" y="285" width="30" height="30" rx="3" fill="#7A2899" opacity="0.4" />
+              <rect x="155" y="312" width="70" height="8" rx="4" fill="#7A2899" opacity="0.4" />
+              <!-- Monitor -->
+              <rect x="80" y="140" width="220" height="148" rx="10" fill="#3B0D50" />
+              <rect x="88" y="148" width="204" height="132" rx="7" fill="#1C0132" />
+              <!-- Screen content -->
+              <rect x="100" y="162" width="80" height="6" rx="3" fill="#CC7A05" opacity="0.9" />
+              <rect x="100" y="174" width="120" height="4" rx="2" fill="rgba(255,255,255,0.3)" />
+              <rect x="100" y="184" width="100" height="4" rx="2" fill="rgba(255,255,255,0.2)" />
+              <rect x="100" y="198" width="60" height="22" rx="11" fill="#CC7A05" />
+              <text x="130" y="213" font-size="8" fill="white" font-family="sans-serif" font-weight="700"
+                text-anchor="middle">₹10 LPA</text>
+              <!-- Chart on screen -->
+              <rect x="220" y="162" width="60" height="50" rx="4" fill="rgba(255,255,255,0.05)" />
+              <rect x="228" y="196" width="8" height="14" rx="2" fill="#7A2899" opacity="0.7" />
+              <rect x="240" y="186" width="8" height="24" rx="2" fill="#CC7A05" opacity="0.8" />
+              <rect x="252" y="178" width="8" height="32" rx="2" fill="#7A2899" opacity="0.9" />
+              <!-- Person sitting - simplified professional figure -->
+              <!-- Chair -->
+              <ellipse cx="190" cy="335" rx="50" ry="12" fill="#C4A0D9" opacity="0.5" />
+              <rect x="170" y="310" width="40" height="30" rx="8" fill="#7A2899" opacity="0.6" />
+              <!-- Body torso -->
+              <rect x="162" y="240" width="56" height="72" rx="16" fill="#3B0D50" />
+              <!-- Shirt collar detail -->
+              <rect x="183" y="240" width="14" height="20" rx="2" fill="white" opacity="0.15" />
+              <!-- Head -->
+              <ellipse cx="190" cy="220" rx="28" ry="32" fill="#D4956B" />
+              <!-- Hair -->
+              <ellipse cx="190" cy="196" rx="28" ry="14" fill="#2C1810" />
+              <rect x="162" y="196" width="56" height="12" rx="0" fill="#2C1810" />
+              <!-- Eyes -->
+              <ellipse cx="181" cy="218" rx="4" ry="4.5" fill="white" />
+              <ellipse cx="199" cy="218" rx="4" ry="4.5" fill="white" />
+              <ellipse cx="181" cy="219" rx="2.5" ry="3" fill="#2C1810" />
+              <ellipse cx="199" cy="219" rx="2.5" ry="3" fill="#2C1810" />
+              <!-- Smile -->
+              <path d="M182 228 Q190 234 198 228" stroke="#2C1810" stroke-width="1.5" fill="none"
+                stroke-linecap="round" />
+              <!-- Arms / hands on desk -->
+              <rect x="130" y="280" width="36" height="18" rx="9" fill="#3B0D50" />
+              <rect x="214" y="280" width="36" height="18" rx="9" fill="#3B0D50" />
+              <ellipse cx="130" cy="289" rx="12" ry="11" fill="#D4956B" />
+              <ellipse cx="250" cy="289" rx="12" ry="11" fill="#D4956B" />
+              <!-- Keyboard on desk -->
+              <rect x="140" y="316" width="100" height="18" rx="4" fill="#C4A0D9" opacity="0.6" />
+              <rect x="146" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="158" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="170" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="182" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="194" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="206" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <rect x="218" y="320" width="8" height="4" rx="1" fill="white" opacity="0.4" />
+              <!-- Badge floating top right -->
+              <rect x="255" y="60" width="100" height="58" rx="12" fill="#3B0D50" />
+              <text x="305" y="82" font-size="9" fill="rgba(255,255,255,0.6)" font-family="sans-serif"
+                text-anchor="middle">CONFIRMED OFFER</text>
+              <text x="305" y="98" font-size="16" fill="#F5A623" font-family="sans-serif" font-weight="800"
+                text-anchor="middle">₹10 LPA</text>
+              <text x="305" y="110" font-size="8" fill="rgba(255,255,255,0.5)" font-family="sans-serif"
+                text-anchor="middle">Before training begins</text>
+              <!-- Small badge top left -->
+              <rect x="25" y="60" width="90" height="44" rx="10" fill="#CC7A05" />
+              <text x="70" y="78" font-size="8" fill="white" font-family="sans-serif" font-weight="600"
+                text-anchor="middle">UK ACCA</text>
+              <text x="70" y="92" font-size="8" fill="rgba(255,255,255,0.85)" font-family="sans-serif"
+                text-anchor="middle">Qualification</text>
+              <!-- Bottom caption bar -->
+              <rect x="0" y="430" width="380" height="50" rx="0" fill="#3B0D50" />
+              <rect x="0" y="430" width="380" height="4" rx="0" fill="#CC7A05" />
+              <text x="190" y="452" font-size="11" fill="white" font-family="sans-serif" font-weight="700"
+                text-anchor="middle">GCC School · DLF Cybercity, Gurugram</text>
+              <text x="190" y="468" font-size="9" fill="rgba(255,255,255,0.55)" font-family="sans-serif"
+                text-anchor="middle">Hire First. Train After.</text>
+            </svg>
           </div>
-        </div>
-        <div class="step hl">
-          <div class="sno">3</div>
-          <div class="sbody">
-            <div class="stag stag-o">Job Interviews — Gurugram*</div>
-            <h3>Invitation to meet the world's top company recruiters</h3>
-            <p>Top NFET performers are invited to job interviews in Gurugram. Recruiting teams from the world's leading
-              consulting firms, global banks, and MNCs interview merit-verified candidates — not anonymous CVs.</p>
-            <p class="sfn">* All expenses paid for eligible achievers</p>
-          </div>
-        </div>
-        <div class="step hl">
-          <div class="sno">4</div>
-          <div class="sbody">
-            <div class="stag stag-o">The hire-first model</div>
-            <h3>Employment offer — ₹10 LPA before training starts</h3>
-            <p>Selected candidates receive a confirmed employment offer at ₹10 LPA before the 12-month training program
-              begins. The job is confirmed first. Training follows.</p>
-          </div>
-        </div>
-        <div class="step">
-          <div class="sno">5</div>
-          <div class="sbody">
-            <h3>12-month AEIAP — UK ACCA qualification</h3>
-            <p>Train at GCC School's campus on the program leading to the UK ACCA — the professional accounting
-              credential held by finance professionals at the world's top firms — while your employment is already
-              confirmed.</p>
-          </div>
-        </div>
-        <div class="step" style="padding-bottom:0">
-          <div class="sno">6</div>
-          <div class="sbody">
-            <h3>Join your employer — globally qualified and ready</h3>
-            <p>Begin your career at a top global company. Offer confirmed in step 4. Qualification earned in step 5.
-              Career starts in step 6.</p>
+          <!-- Stat card below image -->
+          <div class="journey-stat-card">
+            <div class="jsc-item">
+              <div class="jsc-val">89.5%</div>
+              <div class="jsc-lbl">Students believe in our teaching methodology</div>
+            </div>
+            <div class="jsc-div"></div>
+            <div class="jsc-item">
+              <div class="jsc-val">424K+</div>
+              <div class="jsc-lbl">ACCA students worldwide</div>
+            </div>
+            <div class="jsc-div"></div>
+            <div class="jsc-item">
+              <div class="jsc-val">180+</div>
+              <div class="jsc-lbl">Countries recognise ACCA</div>
+            </div>
           </div>
         </div>
       </div>
@@ -3780,7 +4519,7 @@
             <line x1="12" y1="18" x2="12" y2="12" />
             <line x1="9" y1="15" x2="15" y2="15" />
           </svg>Download NFET brochure (PDF)</a></div>
-    </div>
+
   </section>
 
   <!-- ── FOOTER ─────────────────────────────────────────── -->
@@ -4031,6 +4770,36 @@
       cursor: pointer;
     }
   </style>
+
+  <div class="popup-overlay" id="brochure-popup">
+    <div class="popup-box">
+      <span class="popup-close" onclick="closePopup()">&#x2715;</span>
+      <div class="popup-title">Download NFET Brochure</div>
+      <div class="popup-sub">Enter your details and we'll send the brochure directly to your email.</div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-name">Full Name</label>
+        <input class="pp-input" id="pp-name" type="text" placeholder="Your full name">
+      </div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-phone">Mobile Number</label>
+        <input class="pp-input" id="pp-phone" type="tel" placeholder="10-digit mobile number">
+      </div>
+      <div class="pp-field">
+        <label class="pp-label" for="pp-email">Email Address</label>
+        <input class="pp-input" id="pp-email" type="email" placeholder="your@email.com">
+      </div>
+      <button class="pp-btn" onclick="submitBrochure()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+          <polyline points="14 2 14 8 20 8" />
+          <line x1="12" y1="18" x2="12" y2="12" />
+          <line x1="9" y1="15" x2="15" y2="15" />
+        </svg>
+        Download Brochure
+      </button>
+    </div>
+  </div>
+
   <div id="statusModalOverlay" class="status-overlay">
     <div class="status-modal">
       <div class="status-close-btn" onclick="closeStatusModal()">✕</div>

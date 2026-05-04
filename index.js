@@ -592,6 +592,7 @@ function setupAbandonmentTracking() {
   if (stateEl) stateEl.addEventListener("change", checkAndSend);
   if (degreeEl) degreeEl.addEventListener("change", checkAndSend);
 }
+
 function openPopup() {
   document.getElementById('brochure-popup').classList.add('active');
   document.body.style.overflow = 'hidden';

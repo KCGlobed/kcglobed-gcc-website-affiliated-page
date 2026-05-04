@@ -592,3 +592,74 @@ function setupAbandonmentTracking() {
   if (stateEl) stateEl.addEventListener("change", checkAndSend);
   if (degreeEl) degreeEl.addEventListener("change", checkAndSend);
 }
+function openPopup() {
+  document.getElementById('brochure-popup').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closePopup() {
+  document.getElementById('brochure-popup').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+async function submitBrochure() {
+  const n = document.getElementById('pp-name').value.trim();
+  const p = document.getElementById('pp-phone').value.trim();
+  const em = document.getElementById('pp-email').value.trim();
+
+  if (!n || !p || !em) {
+    alert('Please fill in all fields.');
+    return;
+  }
+
+  // Basic validation
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)) { alert('Please enter a valid email.'); return; }
+  if (!/^[6-9]\d{9}$/.test(p)) { alert('Please enter a valid 10-digit mobile number.'); return; }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const utm_campaign = urlParams.get("utm_campaign") || "";
+  const utm_medium = urlParams.get("utm_medium") || "";
+  const utm_source = urlParams.get("utm_source") || "";
+
+  // Show loading state on button
+  const btn = document.querySelector('#brochure-popup .lf-btn');
+  const originalText = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = 'Processing...';
+
+  try {
+    const response = await fetch(GCC_BACKEND_URL + "/api/career/createabondantform", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        full_name: n,
+        email: em,
+        phone: p,
+        source: 6,
+        source_form: 1,
+        utm_source: utm_source,
+        utm_medium: utm_medium,
+        utm_campaign: utm_campaign
+      }),
+    });
+    const result = await response.json();
+    console.log("Brochure lead captured:", result);
+  } catch (e) {
+    console.error("Error capturing brochure lead:", e);
+  }
+
+  btn.innerHTML = originalText;
+  btn.disabled = false;
+  
+  closePopup();
+
+  // Trigger PDF download
+  const pdfUrl = "https://storage.googleapis.com/gcc_prod_static_files_backend/static/files/GCC%20SCHOOL%20Dossier.pdf";
+  const a = document.createElement('a');
+  a.href = pdfUrl;
+  a.download = 'GCC_SCHOOL_Dossier.pdf';
+  a.target = "_blank";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+

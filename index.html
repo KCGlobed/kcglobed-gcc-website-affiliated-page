@@ -3773,7 +3773,7 @@
       </div>
       <div class="final-price">Registration: <strong>₹249</strong></div>
       <div class="final-note">Registration closes May 15, 2026</div>
-      <div><a href="/nfet-brochure.pdf" class="broch" target="_blank"><svg width="11" height="11" viewBox="0 0 24 24"
+      <div><a href="#" class="broch" onclick="openPopup();return false;"><svg width="11" height="11" viewBox="0 0 24 24"
             fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
             <polyline points="14 2 14 8 20 8" />
@@ -4045,6 +4045,30 @@
       <div id="statusPaymentId" style="font-size: 0.75rem; color: var(--t3); margin-top: 12px; display: none;"></div>
       <button id="statusRetryBtn" class="status-retry-btn" style="display: none;" onclick="closeStatusModal()">Try
         Again</button>
+    </div>
+  </div>
+  <div id="brochure-popup" class="status-overlay">
+    <div class="status-modal" style="text-align: left;">
+      <div class="status-close-btn" onclick="closePopup()">✕</div>
+      <h3 style="margin-bottom: 8px; color: var(--dp);">Get the Brochure</h3>
+      <p style="margin-bottom: 24px; font-size: 0.85rem; color: var(--t3);">Enter your details to receive the NFET Dossier immediately.</p>
+      
+      <div class="lf-field">
+        <label class="lf-label">Full Name*</label>
+        <input class="lf-input" id="pp-name" type="text" placeholder="Your full name">
+      </div>
+      <div class="lf-field">
+        <label class="lf-label">Mobile Number*</label>
+        <input class="lf-input" id="pp-phone" type="tel" placeholder="10-digit mobile number">
+      </div>
+      <div class="lf-field">
+        <label class="lf-label">Email Address*</label>
+        <input class="lf-input" id="pp-email" type="email" placeholder="your@email.com">
+      </div>
+      
+      <button class="lf-btn" onclick="submitBrochure()" style="margin-top: 16px;">
+        Download Dossier
+      </button>
     </div>
   </div>
   <script src="university-data.js"></script>

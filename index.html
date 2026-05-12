@@ -770,6 +770,48 @@
       font-style: italic;
     }
 
+    .lf-field-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .lf-field-row .lf-input {
+      flex: 1;
+    }
+
+    .lf-otp-btn {
+      background: var(--mp);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: 9px 15px;
+      border-radius: 8px;
+      white-space: nowrap;
+      transition: all .2s;
+      height: 37px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 100px;
+    }
+
+    .lf-otp-btn:hover {
+      background: var(--bp);
+      transform: translateY(-1px);
+    }
+
+    .lf-otp-btn:disabled {
+      background: var(--t3);
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .lf-otp-btn.verified {
+      background: var(--gn) !important;
+      cursor: default;
+    }
+
     .lf-btn {
       width: 100%;
       background: var(--or);
@@ -3804,8 +3846,20 @@
           </div>
           <div class="lf-field">
             <label class="lf-label" for="gcc_phone">Mobile Number*</label>
-            <input class="lf-input" id="gcc_phone" type="tel" placeholder="10-digit mobile number" autocomplete="tel">
+            <div class="lf-field-row">
+              <input class="lf-input" id="gcc_phone" type="tel" placeholder="10-digit mobile number" autocomplete="tel">
+              <button type="button" class="lf-otp-btn" id="btn_send_otp" onclick="sendOTP()">Send OTP</button>
+            </div>
             <div class="field-error" id="err_gcc_phone"></div>
+          </div>
+
+          <div class="lf-field" id="otp_container" style="display: none;">
+            <label class="lf-label" for="gcc_otp">Enter OTP*</label>
+            <div class="lf-field-row">
+              <input class="lf-input" id="gcc_otp" type="text" placeholder="Enter 6-digit OTP" maxlength="6">
+              <button type="button" class="lf-otp-btn" id="btn_verify_otp" onclick="verifyOTP()">Verify OTP</button>
+            </div>
+            <div class="field-error" id="err_gcc_otp"></div>
           </div>
           <div class="lf-field">
             <label class="lf-label" for="gcc_state">State/UT*</label>

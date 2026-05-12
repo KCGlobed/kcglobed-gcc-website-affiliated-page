@@ -7,6 +7,9 @@ var GCC_BACKEND_URL = "https://gccwebsite-admin-prod-backend-738131651355.asia-s
 // var mode = "sandbox"
 var FORM_TYPE = 1
 
+var OTP_BASE_URL = "https://kcglobed-gcc-website-932479078084.asia-south1.run.app";
+let isOTPVerified = false;
+
 
 window.addEventListener("scroll", function () {
   var scrollBottom = window.scrollY + window.innerHeight;
@@ -50,6 +53,11 @@ function handlePayClick() {
   if (!city) { setFieldError("gcc_city", "City selection is required"); hasError = true; }
   if (!degree) { setFieldError("gcc_degree", "University selection is required"); hasError = true; }
   if (!commerceChecked) { setFieldError("gcc_commerce_graduate", "This confirmation is required"); hasError = true; }
+
+  if (!isOTPVerified) {
+    setFieldError("gcc_phone", "Please verify your mobile number via OTP first");
+    hasError = true;
+  }
 
   if (hasError) {
     // Scroll to first error
@@ -662,5 +670,94 @@ async function submitBrochure() {
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
+}
+
+// Send OTP Function
+async function sendOTP() {
+  const phone = document.getElementById("gcc_phone").value.trim();
+  const btn = document.getElementById("btn_send_otp");
+
+  if (!phone || !/^[6-9]\d{9}$/.test(phone)) {
+    setFieldError("gcc_phone", "Valid 10-digit mobile number is required");
+    return;
+  }
+
+  // Clear previous errors for phone
+  const errEl = document.getElementById("err_gcc_phone");
+  if (errEl) errEl.style.display = "none";
+  document.getElementById("gcc_phone").classList.remove("invalid");
+
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  try {
+    const response = await fetch(`${OTP_BASE_URL}/api/otp/send`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mobile: phone }),
+    });
+    const result = await response.json();
+
+    if (result.success || result.status === "success") {
+      document.getElementById("otp_container").style.display = "block";
+      btn.textContent = "Resend OTP";
+    } else {
+      setFieldError("gcc_phone", result.statusMessage || result.message || "Failed to send OTP. Try again.");
+      btn.textContent = "Send OTP";
+    }
+  } catch (err) {
+    console.error("Error sending OTP:", err);
+    setFieldError("gcc_phone", "Network error. Please try again.");
+    btn.textContent = "Send OTP";
+  } finally {
+    btn.disabled = false;
+  }
+}
+
+async function verifyOTP() {
+  const phone = document.getElementById("gcc_phone").value.trim();
+  const otp = document.getElementById("gcc_otp").value.trim();
+  const btn = document.getElementById("btn_verify_otp");
+
+  if (!otp || otp.length < 6) {
+    setFieldError("gcc_otp", "Enter a valid OTP");
+    return;
+  }
+
+  // Clear previous errors for OTP
+  const errEl = document.getElementById("err_gcc_otp");
+  if (errEl) errEl.style.display = "none";
+  document.getElementById("gcc_otp").classList.remove("invalid");
+
+  btn.disabled = true;
+  btn.textContent = "Verifying...";
+
+  try {
+    const response = await fetch(`${OTP_BASE_URL}/api/otp/verify`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ mobile: phone, otp }),
+    });
+    const result = await response.json();
+
+    if (result.success || result.status === "success") {
+      isOTPVerified = true;
+      btn.textContent = "Verified OTP";
+      btn.classList.add("verified");
+      btn.disabled = true;
+      document.getElementById("gcc_phone").disabled = true;
+      document.getElementById("btn_send_otp").style.display = "none";
+      document.getElementById("gcc_otp").disabled = true;
+    } else {
+      setFieldError("gcc_otp", result.statusMessage || result.message || "Invalid OTP. Please try again.");
+      btn.disabled = false;
+      btn.textContent = "Verify OTP";
+    }
+  } catch (err) {
+    console.error("Error verifying OTP:", err);
+    setFieldError("gcc_otp", "Network error. Please try again.");
+    btn.disabled = false;
+    btn.textContent = "Verify OTP";
+  }
 }
 

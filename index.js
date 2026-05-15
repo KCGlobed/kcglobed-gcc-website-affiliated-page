@@ -20,6 +20,120 @@ window.addEventListener("scroll", function () {
 });
 
 
+
+let isReferralApplied = false;
+let verifiedReferralCode = "";
+let isVerifyingReferral = false;
+
+function resetReferralState() {
+  if (isReferralApplied) {
+    isReferralApplied = false;
+    verifiedReferralCode = "";
+    document.getElementById("apply_referral_btn").innerHTML = "Apply";
+    document.getElementById("apply_referral_btn").disabled = false;
+    document.getElementById("apply_referral_btn").style.background = "var(--bp)";
+    document.getElementById("success_gcc_referral_code").style.display = "none";
+    document.getElementById("gcc_referral_code").style.borderColor = "var(--pb)";
+    document.getElementById("gcc_referral_code").readOnly = false;
+    
+    // Reset main button text
+    document.getElementById("main_submit_text").innerHTML = "Pay ₹249 &amp; Register";
+  }
+  document.getElementById("err_gcc_referral_code").style.display = "none";
+  document.getElementById("gcc_referral_code").classList.remove("invalid");
+}
+
+async function verifyAndApplyReferral() {
+  const codeInput = document.getElementById("gcc_referral_code");
+  const code = codeInput.value.trim();
+  const errEl = document.getElementById("err_gcc_referral_code");
+  const btn = document.getElementById("apply_referral_btn");
+  
+  if (!code) return;
+  
+  isVerifyingReferral = true;
+  errEl.style.display = "none";
+  codeInput.classList.remove("invalid");
+  btn.textContent = "Verifying...";
+  btn.disabled = true;
+
+  try {
+    const verifyRes = await fetch(`${GCC_BACKEND_URL}/api/users/verify_refferal_code/`, {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ refferal_code: code })
+    });
+    
+    let result;
+    try {
+        result = await verifyRes.json();
+    } catch(e) {
+        throw new Error("Invalid response from server");
+    }
+
+    if (verifyRes.ok === false || result?.success === false || result?.data?.verified_status === false) {
+        errEl.textContent = result?.message || result?.data?.message || 'Invalid referral code';
+        errEl.style.display = "block";
+        codeInput.classList.add("invalid");
+        btn.textContent = "Apply";
+        btn.disabled = false;
+    } else {
+        isReferralApplied = true;
+        verifiedReferralCode = code;
+        btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-right:4px;"><polyline points="20 6 9 17 4 12"></polyline></svg> Applied';
+        btn.style.background = "var(--gn)";
+        codeInput.style.borderColor = "var(--gn)";
+        codeInput.readOnly = true;
+        document.getElementById("success_gcc_referral_code").style.display = "flex";
+        
+        // Update main button text
+        document.getElementById("main_submit_text").textContent = "Register for Free";
+    }
+  } catch (err) {
+    console.error('[Verify Referral Code] Error:', err);
+    errEl.textContent = err.message || 'Invalid referral code';
+    errEl.style.display = "block";
+    codeInput.classList.add("invalid");
+    btn.textContent = "Apply";
+    btn.disabled = false;
+  } finally {
+    isVerifyingReferral = false;
+  }
+}
+
+function closeCelebrationModal() {
+  const overlay = document.getElementById("celebrationModalOverlay");
+  if (overlay) overlay.classList.remove("active");
+  // Reload the page to clear state after success
+  window.location.reload();
+}
+
+function showCelebrationModal() {
+  const overlay = document.getElementById('celebrationModalOverlay');
+  const container = document.getElementById('confettiContainer');
+  if (overlay) overlay.classList.add('active');
+  
+  if (container) {
+    container.innerHTML = '';
+    const colors = ['#5B32CC', '#CC7A05', '#F5A623', '#7A2899', '#1A7A4A'];
+    for (let i = 0; i < 40; i++) {
+      const particle = document.createElement('span');
+      particle.className = 'confetti-particle';
+      
+      const color = colors[Math.floor(Math.random() * colors.length)];
+      const left = Math.random() * 100;
+      const animDuration = 1 + Math.random() * 2;
+      const animDelay = Math.random() * 1.5;
+      
+      particle.style.backgroundColor = color;
+      particle.style.left = left + '%';
+      particle.style.animation = `confetti-fall ${animDuration}s ${animDelay}s forwards ease-in`;
+      
+      container.appendChild(particle);
+    }
+  }
+}
+
 function handlePayClick() {
   const fields = ["gcc_name", "gcc_email", "gcc_phone", "gcc_state", "gcc_city", "gcc_degree", "gcc_commerce_graduate"];
 
@@ -83,11 +197,7 @@ async function startPayment(name, email, mobile, city, state, degree) {
   const utm_source = urlParams.get("utm_source") || "";
 
   try {
-    // ✅ Step 1: Create Form
-    const formRes = await fetch(GCC_BACKEND_URL + "/api/career/createdossierform", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
+    const payload = {
         full_name: name,
         email,
         phone: mobile,
@@ -98,7 +208,18 @@ async function startPayment(name, email, mobile, city, state, degree) {
         utm_medium,
         utm_source,
         source: 6,
-      }),
+        referred_code: isReferralApplied ? verifiedReferralCode : ""
+    };
+
+    if (isReferralApplied) {
+        payload.fee_waiver_category = "Free of cost (FOC)";
+    }
+
+    // ✅ Step 1: Create Form
+    const formRes = await fetch(GCC_BACKEND_URL + "/api/career/createdossierform", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload),
     });
 
     const formData = await formRes.json();
@@ -126,7 +247,7 @@ async function startPayment(name, email, mobile, city, state, degree) {
           form_id: latest_form_id,
           source: 6,
           action: "pay_now",
-          commingAmount: 249
+          commingAmount: isReferralApplied ? 0 : 249
         }),
       });
 
@@ -138,7 +259,51 @@ async function startPayment(name, email, mobile, city, state, degree) {
       // optional: continue flow
     }
 
-    // ✅ Step 3: Start Payment
+    // GTM Lead Tracking: Fire only on successful form submission before moving to payment
+    if (!finalFormSubmitFired) {
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "final_form_submit"
+      });
+      finalFormSubmitFired = true;
+    }
+
+    // ✅ Step 2.5: If Referral is Applied, skip payment entirely!
+    if (isReferralApplied) {
+      try {
+        const studentRes = await fetch(GCC_BACKEND_URL + "/api/users/create_student/", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            full_name: name,
+            email: email,
+            city: city,
+            state: state,
+            country: "India",
+            phone1: mobile,
+            referred_code: verifiedReferralCode,
+          }),
+        });
+        const studentData = await studentRes.json();
+        console.log("Student created (Referral):", studentData);
+
+        closeStatusModal();
+        
+        if (studentRes.ok) {
+          // Only show celebration if student was successfully created
+          showCelebrationModal();
+        } else {
+          showStatusModal(false, studentData.message || "Could not register your profile. Please try again.", null);
+        }
+      } catch (studentErr) {
+        console.error("Student creation failed:", studentErr);
+        closeStatusModal();
+        showStatusModal(false, "Server error. Could not complete registration.", null);
+      }
+      return;
+    }
+
+    // ✅ Step 3: Start Payment (normal flow)
     const paymentRes = await fetch(BASE_URL + "/api/start-payment", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -161,15 +326,6 @@ async function startPayment(name, email, mobile, city, state, degree) {
     if (!paymentData.success) {
       showStatusModal(false, paymentData.message || "Could not initiate payment. Please try again.", null);
       return;
-    }
-
-    // GTM Lead Tracking: Fire only on successful form submission before moving to payment
-    if (!finalFormSubmitFired) {
-      window.dataLayer = window.dataLayer || [];
-      window.dataLayer.push({
-        event: "final_form_submit"
-      });
-      finalFormSubmitFired = true;
     }
 
     // ✅ Step 4: Launch Payment Gateway

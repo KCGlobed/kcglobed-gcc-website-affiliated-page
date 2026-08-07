@@ -1,0 +1,18 @@
+{
+    "version": 1,
+    "project": {
+        "name": "affiliate-4",
+        "runtime": "static",
+        "repository": "KCGlobed/kcglobed-gcc-website-affiliated-page",
+        "branch": "main"
+    },
+    "deployment": {
+        "keepReleases": 5
+    },
+    "runtimeConfig": {},
+    "web": {
+        "domain": "nfetexam.gccschool.com",
+        "ssl": true,
+        "sslEmail": "kcglobed@gmail.com"
+    }
+}

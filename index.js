@@ -22,8 +22,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
-
 let isReferralApplied = false;
 let verifiedReferralCode = "";
 let isVerifyingReferral = false;

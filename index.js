@@ -7,7 +7,7 @@ var GCC_BACKEND_URL = "https://gccwebsite-admin-prod-backend-738131651355.asia-s
 // var mode = "sandbox"
 var FORM_TYPE = 1
 
-var OTP_BASE_URL = "https://kcglobed-gcc-website-932479078084.asia-south1.run.app";
+var OTP_BASE_URL = "https://gccschool.com";
 let isOTPVerified = false;
 
 

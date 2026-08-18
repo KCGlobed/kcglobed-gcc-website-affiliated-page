@@ -166,10 +166,10 @@ function handlePayClick() {
   if (!degree) { setFieldError("gcc_degree", "University selection is required"); hasError = true; }
   if (!commerceChecked) { setFieldError("gcc_commerce_graduate", "This confirmation is required"); hasError = true; }
 
-  // if (!isOTPVerified) {
-  //   setFieldError("gcc_phone", "Please verify your mobile number via OTP first");
-  //   hasError = true;
-  // }
+  if (!isOTPVerified) {
+    setFieldError("gcc_phone", "Please verify your mobile number via OTP first");
+    hasError = true;
+  }
 
   if (hasError) {
     // Scroll to first error
